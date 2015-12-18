@@ -13,31 +13,33 @@ using Java.Lang;
 
 namespace P4U.Droid.Base_Adapter
 {
-    public class GridViewHomeAdapter: BaseAdapter
+    public class GridViewHomeAdapter: BaseAdapter<GridViewHome>
     {
         Context context;
+        List<GridViewHome>items;
 
-        public GridViewHomeAdapter(Context c)
+        public GridViewHomeAdapter(Context c,List<GridViewHome> items):base()
         {
             this.context = c;
+            this.items = items;
         }
 
         public override int Count
         {
             get
             {
-                return thumbIds.Length;
+                return items.Count;
             }
         }
 
-        public override Java.Lang.Object GetItem(int position)
+        public override GridViewHome this[int position]
         {
-            return null;
+            get { return items[position]; }
         }
 
         public override long GetItemId(int position)
         {
-            return 0;
+            return position;
         }
 
         public override View GetView(int position, View convertView, ViewGroup parent)
@@ -48,7 +50,7 @@ namespace P4U.Droid.Base_Adapter
             {
                 // if it's not recycled, initialize some attributes
                 imageView = new ImageView(context);
-                //imageView.LayoutParameters = new AbsListView.LayoutParams(4, 4);
+                imageView.LayoutParameters = new AbsListView.LayoutParams(100,100);
                 imageView.SetScaleType(ImageView.ScaleType.CenterCrop);
             }
             else

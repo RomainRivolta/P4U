@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Base_Adapter\GridViewHomeAdapter.cs" />
     <Compile Include="Base_Adapter\ListViewAdapter.cs" />
+    <Compile Include="GridViewHome.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

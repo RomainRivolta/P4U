@@ -23,7 +23,8 @@ namespace P4U.Droid
             SetContentView (Resource.Layout.Main);
 
             var gridView = FindViewById<GridView>(Resource.Id.gridViewHome);
-            gridView.Adapter = new Base_Adapter.GridViewHomeAdapter(this);
+            var lstGrid = GridViewHome.getGridViewHome();
+            gridView.Adapter = new Base_Adapter.GridViewHomeAdapter(this,lstGrid);
 
             // Get our button from the layout resource,
             // and attach an event to it

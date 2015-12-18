@@ -1,0 +1,12 @@
+P4U.Droid.MainActivity, P4U.Droid;md579456ae394a78074b56c6cdab70c2a02.MainActivity
+P4U.Droid.MainActivity, P4U.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md579456ae394a78074b56c6cdab70c2a02.MainActivity
+P4U.Droid.MainActivity;md579456ae394a78074b56c6cdab70c2a02.MainActivity
+p4u.droid.MainActivity;md579456ae394a78074b56c6cdab70c2a02.MainActivity
+P4U.Droid.Base_Adapter.GridViewHomeAdapter, P4U.Droid;md5d15efed168ea70a3f59de5600083d553.GridViewHomeAdapter
+P4U.Droid.Base_Adapter.GridViewHomeAdapter, P4U.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d15efed168ea70a3f59de5600083d553.GridViewHomeAdapter
+P4U.Droid.Base_Adapter.GridViewHomeAdapter;md5d15efed168ea70a3f59de5600083d553.GridViewHomeAdapter
+p4u.droid.base_adapter.GridViewHomeAdapter;md5d15efed168ea70a3f59de5600083d553.GridViewHomeAdapter
+P4U.Droid.Base_Adapter.ListViewAdapter, P4U.Droid;md5d15efed168ea70a3f59de5600083d553.ListViewAdapter
+P4U.Droid.Base_Adapter.ListViewAdapter, P4U.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5d15efed168ea70a3f59de5600083d553.ListViewAdapter
+P4U.Droid.Base_Adapter.ListViewAdapter;md5d15efed168ea70a3f59de5600083d553.ListViewAdapter
+p4u.droid.base_adapter.ListViewAdapter;md5d15efed168ea70a3f59de5600083d553.ListViewAdapter
