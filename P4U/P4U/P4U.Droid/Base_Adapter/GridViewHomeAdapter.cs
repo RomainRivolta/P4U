@@ -44,27 +44,14 @@ namespace P4U.Droid.Base_Adapter
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
-            ImageView imageView;
-
+            LayoutInflater inflater = context.GetSystemService(Context.LayoutInflaterService) as LayoutInflater;
             if (convertView == null)
             {
-                // if it's not recycled, initialize some attributes
-                imageView = new ImageView(context);
-                imageView.LayoutParameters = new AbsListView.LayoutParams(100,100);
-                imageView.SetScaleType(ImageView.ScaleType.CenterCrop);
+                convertView = inflater.Inflate(Resource.Layout.CustomGridViewHome,null);
             }
-            else
-            {
-                imageView = (ImageView)convertView;
-            }
-            imageView.SetImageResource(thumbIds[position]);
-            return imageView;
+            convertView.FindViewById<ImageView>(Resource.Id.imageViewHomeIcon).SetImageResource(items[position].Image);
+            convertView.FindViewById<TextView>(Resource.Id.grid_text).Text = items[position].Name;
+            return convertView;
         }
-
-        private readonly int[] thumbIds = {
-            Resource.Drawable.ic_location, Resource.Drawable.ic_food,
-            Resource.Drawable.ic_parking, Resource.Drawable.ic_airport
-        };
-
     }
 }

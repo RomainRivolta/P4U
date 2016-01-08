@@ -44,9 +44,22 @@ namespace P4U.Droid.Base_Adapter
             var item = items[position];
 
             if (view == null) // otherwise create a new one
-                view = context.LayoutInflater.Inflate(Android.Resource.Layout.SimpleListItem1, null);
+                view = context.LayoutInflater.Inflate(Resource.Layout.CustomListViewResult, null);
 
-            view.FindViewById<TextView>(Android.Resource.Id.Text1).Text = string.Format("{0}", item.Name);
+            string[] splitAddress = item.Address.Split(',');
+            string rue = splitAddress[0].Trim();
+            string addr = string.Empty;
+
+            for (int i = 1; i < splitAddress.Length; i++)
+            {
+                addr += splitAddress[i].Trim();
+            }
+
+            view.FindViewById<TextView>(Resource.Id.textViewNameResult).Text = item.Name;
+            view.FindViewById<TextView>(Resource.Id.textViewRueResult).Text = rue;
+            view.FindViewById<TextView>(Resource.Id.textViewPaysEtVilleEtCPResult).Text = addr;
+
+            Square.Picasso.Picasso.With(context).Load(item.Picture).Into(view.FindViewById<ImageView>(Resource.Id.imageViewPictureResult));
             return view;
         }
 
