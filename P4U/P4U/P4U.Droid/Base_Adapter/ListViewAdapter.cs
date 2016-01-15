@@ -35,33 +35,78 @@ namespace P4U.Droid.Base_Adapter
 
         public override int Count
         {
-            get { return items.Count; }
+            get
+            {
+                if(!string.IsNullOrEmpty(items.FirstOrDefault().PageToken))
+                {
+                    return items.Count + 1;
+                }
+                else
+                {
+                    return items.Count;
+                }
+            }
         }
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             View view = convertView; // re-use an existing view, if one is available
-            var item = items[position];
 
-            if (view == null) // otherwise create a new one
-                view = context.LayoutInflater.Inflate(Resource.Layout.CustomListViewResult, null);
+                if (view == null) // otherwise create a new one
+                    view = context.LayoutInflater.Inflate(Resource.Layout.CustomListViewResult, null);
 
-            string[] splitAddress = item.Address.Split(',');
-            string rue = splitAddress[0].Trim();
-            string addr = string.Empty;
+            TextView textViewNameResult = view.FindViewById<TextView>(Resource.Id.textViewNameResult);
+            TextView textViewRueResult = view.FindViewById<TextView>(Resource.Id.textViewRueResult);
+            TextView textViewPaysEtVilleEtCPResult = view.FindViewById<TextView>(Resource.Id.textViewPaysEtVilleEtCPResult);
+            TextView textViewMoreData = view.FindViewById<TextView>(Resource.Id.textViewMoreData);
+            ImageView imageViewPictureResult = view.FindViewById<ImageView>(Resource.Id.imageViewPictureResult);
 
-            for (int i = 1; i < splitAddress.Length; i++)
+            if (position != Count - 1)
             {
-                addr += splitAddress[i].Trim();
+                var item = items[position];
+                string[] splitAddress = item.Address.Split(',');
+                string rue = splitAddress[0].Trim();
+                string addr = string.Empty;
+
+                for (int i = 1; i < splitAddress.Length; i++)
+                {
+                    addr += splitAddress[i].Trim();
+                }
+
+                textViewNameResult.Text = item.Name;
+                textViewNameResult.Visibility = ViewStates.Visible;
+
+                textViewRueResult.Text = rue;
+                textViewRueResult.Visibility = ViewStates.Visible;
+
+                textViewPaysEtVilleEtCPResult.Text = addr;
+                textViewPaysEtVilleEtCPResult.Visibility = ViewStates.Visible;
+
+                textViewMoreData.Visibility = ViewStates.Gone;
+
+                Square.Picasso.Picasso.With(context).Load(item.Picture).Into(imageViewPictureResult);
+                imageViewPictureResult.Visibility = ViewStates.Visible;
             }
+            else
+            {
+                textViewMoreData.Text = "Afficher plus de resultats...";
+                textViewMoreData.Visibility = ViewStates.Visible;
 
-            view.FindViewById<TextView>(Resource.Id.textViewNameResult).Text = item.Name;
-            view.FindViewById<TextView>(Resource.Id.textViewRueResult).Text = rue;
-            view.FindViewById<TextView>(Resource.Id.textViewPaysEtVilleEtCPResult).Text = addr;
+                textViewNameResult.Visibility = ViewStates.Gone;
+                textViewPaysEtVilleEtCPResult.Visibility = ViewStates.Gone;
+                textViewRueResult.Visibility = ViewStates.Gone;
+                imageViewPictureResult.Visibility = ViewStates.Gone;
 
-            Square.Picasso.Picasso.With(context).Load(item.Picture).Into(view.FindViewById<ImageView>(Resource.Id.imageViewPictureResult));
+            }
             return view;
         }
+
+        public void AddIListItems(List<PlaceSearch> lstPlace)
+        {
+            this.items.AddRange(lstPlace);
+            this.NotifyDataSetChanged();
+        }
+
 
     }
 }

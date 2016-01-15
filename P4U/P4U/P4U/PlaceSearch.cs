@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 
 namespace P4U
 {
-   [DataContract]
     public class PlaceSearch
     {
-        [DataMember(Name ="name")]
         public string Name { get; set; }
+        public string Picture { get; set; }
+        public string PlaceId { get; set; }
+        public string Address { get; set; }
+        public string PageToken { get; set; }
     }
 }

@@ -24,6 +24,9 @@
     <AppxPackagedFile Include="D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U\bin\Debug\P4U.dll">
       <PackagePath>P4U.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U\bin\Debug\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.WinPhone\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>

@@ -7,7 +7,9 @@ D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.WinPhone\bin\Debug\reso
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.WinPhone\bin\Debug\AppxManifest.xml
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.WinPhone\bin\Debug\P4U.WinPhone.build.appxrecipe
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.WinPhone\bin\Debug\P4U.dll
+D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.WinPhone\bin\Debug\Newtonsoft.Json.dll
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.WinPhone\bin\Debug\P4U.pdb
+D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.WinPhone\bin\Debug\Newtonsoft.Json.xml
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.WinPhone\obj\Debug\P4U.WinPhone.csprojResolveAssemblyReference.cache
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.WinPhone\obj\Debug\App.g.i.cs
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.WinPhone\obj\Debug\App.g.cs
