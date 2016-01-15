@@ -22,17 +22,11 @@ namespace P4U.Droid
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-
-            MenuInflater.Inflate(Resource.Menu.menu_main, menu);
-            return base.OnPrepareOptionsMenu(menu);
-            // return true;
+            MenuInflater.Inflate(Resource.Menu.test, menu);
+            var item = menu.FindItem(Resource.Id.action_search);
+            return true;
         }
 
-        //public override bool OnPrepareOptionsMenu(IMenu menu)
-        //{
-        //    MenuInflater.Inflate(Resource.Menu.menu_main,menu);
-        //    return base.OnPrepareOptionsMenu(menu);
-        //}
 
         protected override void OnCreate (Bundle bundle)
 		{
@@ -51,9 +45,9 @@ namespace P4U.Droid
             // Grid view home
             var gridView = FindViewById<GridView>(Resource.Id.gridViewHome);
             var lstGrid = GridViewHome.getGridViewHome();
-            gridView.Adapter = new Base_Adapter.GridViewHomeAdapter(this,lstGrid);
+            gridView.Adapter = new Base_Adapter.GridViewHomeAdapter(this, lstGrid);
             gridView.ItemClick += GridViewHome_Click;
-		}
+        }
 
         protected override void OnResume()
         {
@@ -92,45 +86,13 @@ namespace P4U.Droid
             string longitude = SingletonLocation.Instance.currentLocation.Longitude.ToString().Replace(",", ".");
             string latitude = SingletonLocation.Instance.currentLocation.Latitude.ToString().Replace(",", ".");
 
-            //Core core = new Core();
-            //core.latitude = latitude;
-            //core.longitude = longitude;
-            //string query = core.TextSearchRequestsByLocation(longitude, latitude, 2000, selectItem);
-            //var resultPlaceSearch = core.GetPlaceSearch(query, MAX_WIDTH, MAX_HEIGHT).Result;
-
             Intent resultActivity = new Intent(this, typeof(ResultActivity));
             resultActivity.PutExtra("SelectType", selectItem);
             resultActivity.PutExtra("longitude", longitude);
             resultActivity.PutExtra("latitude", latitude);
 
-
-            //var res = Newtonsoft.Json.JsonConvert.SerializeObject(resultPlaceSearch);
-            //resultActivity.PutExtra("ResultPlaceSearch", res);
-
             StartActivity(resultActivity);
         }
-
-        //public void OnLocationChanged(Location location)
-        //{
-        //    currentLocation = location;
-        //    currentLocation.Latitude = location.Latitude;
-        //    currentLocation.Longitude = location.Longitude;
-        //}
-
-        //public void OnProviderDisabled(string provider)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public void OnProviderEnabled(string provider)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public void OnStatusChanged(string provider, [GeneratedEnum] Availability status, Bundle extras)
-        //{
-        //    Toast.MakeText(this, "On status changed", ToastLength.Long).Show();
-        //}
     }
 }
 

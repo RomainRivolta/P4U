@@ -1513,6 +1513,9 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f0b0023
 			public const int action_mode_close_button = 2131427363;
 			
+			// aapt resource value: 0x7f0b006b
+			public const int action_search = 2131427435;
+			
 			// aapt resource value: 0x7f0b0024
 			public const int activity_chooser_view_content = 2131427364;
 			
@@ -1977,6 +1980,9 @@ namespace P4U.Droid
 			
 			// aapt resource value: 0x7f0c0000
 			public const int menu_main = 2131492864;
+			
+			// aapt resource value: 0x7f0c0001
+			public const int test = 2131492865;
 			
 			static Menu()
 			{

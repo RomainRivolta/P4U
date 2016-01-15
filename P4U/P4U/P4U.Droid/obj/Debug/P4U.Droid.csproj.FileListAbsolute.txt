@@ -95,8 +95,8 @@ D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\res\dra
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\res\drawable-xhdpi\ic_search_white_24dp.png
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\res\drawable-xxhdpi\ic_search_white_24dp.png
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\res\drawable-xxxhdpi\ic_search_white_24dp.png
+D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\res\menu\test.xml
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\R.cs.flag
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\uploadflags.txt
-D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\P4U.dll.mdb
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\P4U.Droid.dll.mdb
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\P4U.Droid.dll.mdb
