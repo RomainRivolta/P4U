@@ -1,15 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V4.View;
+using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
-using Android.Support.V7.App;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace P4U.Droid
 {
@@ -17,12 +16,21 @@ namespace P4U.Droid
     public class ResultActivity : AppCompatActivity
     {
         private string SELECT_TYPE;
+        private string QUERY;
         private const int MAX_WIDTH=160;
         private const int MAX_HEIGHT= 160;
-        private string LONGITUDE;
-        private string LATITUDE;
         private int RADIUS = 10000;
         private List<PlaceSearch> RESULT_PLACE_SEARCH;
+        private Core core = new Core();
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.menu_toolbar, menu);
+            var item = menu.FindItem(Resource.Id.action_search);
+            var searchView = MenuItemCompat.GetActionView(item);
+            SearchView _searchView = searchView.JavaCast<SearchView>();
+            return base.OnCreateOptionsMenu(menu);
+        }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -32,16 +40,25 @@ namespace P4U.Droid
 
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
-            SupportActionBar.Title = "k";
+            string query = string.Empty;
 
-            SELECT_TYPE = Intent.GetStringExtra("SelectType");
-            LONGITUDE = Intent.GetStringExtra("longitude");
-            LATITUDE  = Intent.GetStringExtra("latitude");
+            core.latitude = Intent.GetStringExtra("latitude");
+            core.longitude = Intent.GetStringExtra("longitude");
 
-            Core core = new Core();
+            if (string.IsNullOrEmpty(Intent.GetStringExtra("SelectType")))
+            {
+                QUERY = Intent.GetStringExtra("Search");
+                query = core.TextSearchRequestsBySearch(QUERY);
+            }
 
-            string query = core.TextSearchRequestsByLocation(LONGITUDE, LATITUDE, RADIUS, SELECT_TYPE);
-            Console.WriteLine(query);
+            else
+            {
+                SELECT_TYPE = Intent.GetStringExtra("SelectType");
+                QUERY = SELECT_TYPE;
+                SupportActionBar.Title = Intent.GetStringExtra("SelectName");
+                query = core.TextSearchRequestsByLocation(RADIUS, QUERY, SELECT_TYPE);
+            }
+
             RESULT_PLACE_SEARCH = core.GetPlaceSearch(query, MAX_WIDTH, MAX_HEIGHT).Result;
             FillListView(RESULT_PLACE_SEARCH);
 
@@ -54,7 +71,6 @@ namespace P4U.Droid
 
         private void ItemListView_Click(object sender, AdapterView.ItemClickEventArgs e)
         {
-            Core core = new Core();
             if (e.Position != RESULT_PLACE_SEARCH.Count)
             {
                 string query = core.PlaceDetailsResponses(RESULT_PLACE_SEARCH[e.Position].PlaceId);
@@ -67,7 +83,7 @@ namespace P4U.Droid
             }
             else
             {
-                string query = core.TextSearchRequestsByLocation(LONGITUDE, LATITUDE, RADIUS, SELECT_TYPE, pagetoken: RESULT_PLACE_SEARCH.FirstOrDefault().PageToken);
+                string query = core.TextSearchRequestsByLocation(RADIUS, QUERY, SELECT_TYPE, pagetoken: RESULT_PLACE_SEARCH.FirstOrDefault().PageToken);
                 RESULT_PLACE_SEARCH = core.GetPlaceSearch(query, MAX_WIDTH, MAX_HEIGHT).Result;
                 RefreshListView(RESULT_PLACE_SEARCH);
             }
@@ -80,7 +96,7 @@ namespace P4U.Droid
             if (!string.IsNullOrEmpty(search))
             {
                 Core core = new Core();
-                string query = core.TextSearchRequestsBySearch(SELECT_TYPE, search);
+                string query = core.TextSearchRequestsBySearch(search);
                 RESULT_PLACE_SEARCH = core.GetPlaceSearch(query,MAX_WIDTH,MAX_HEIGHT).Result;
                 FillListView(RESULT_PLACE_SEARCH);
             }

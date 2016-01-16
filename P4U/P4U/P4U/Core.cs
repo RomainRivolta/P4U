@@ -12,15 +12,14 @@ namespace P4U
         public string latitude { get; set; }
         public string longitude { get; set; }
 
-        public string TextSearchRequestsByLocation(string longitude,string latitude,int radius,string types,string pagetoken = "")
+        public string TextSearchRequestsByLocation(int radius,string query,string types="",string pagetoken = "")
         {
-            //return "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+latitude+","+longitude+"&radius="+ nearbySearchRaduis + "&types="+nearbySearchTypes+"&key="+key;
-            return "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + types + "&pagetoken=" + pagetoken + "&location="+latitude+","+longitude+"&radius="+radius +"&types=" + types + "&key=" + key;
+            return "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + query + "&pagetoken=" + pagetoken + "&location="+latitude+","+longitude+"&radius="+radius +"&types=" + types + "&key=" + key;
         }
 
-        public string TextSearchRequestsBySearch(string types,string search)
+        public string TextSearchRequestsBySearch(string search)
         {
-            return "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + types + "%20" + search + "&types=" + types + "&key=" + key;
+            return "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + search + "&key=" + key;
         }
 
         public string PlaceDetailsResponses(string placeId)
@@ -56,7 +55,7 @@ namespace P4U
 
                     string queryMatrix = DistanceMatrixRequests(str_latitudeDestinations, str_longitudeDestinations, "driving");
 
-                    //string km = GetMatrix(queryMatrix);
+                    string km = GetMatrix(queryMatrix);
 
                     lstPlaceSearch.Add(new PlaceSearch()
                     {
@@ -64,7 +63,8 @@ namespace P4U
                         Picture = placePhoto ,
                         PlaceId = item["place_id"].Value,
                         Address = address,
-                        PageToken = nextPageToken
+                        PageToken = nextPageToken,
+                        Distance = km
                     });
                 }
                 return lstPlaceSearch;
@@ -107,15 +107,13 @@ namespace P4U
         public string GetMatrix(string query)
         {
             dynamic data_results = DataService.GetDataFromService(query).Result;
-            dynamic matrixOverview = data_results["rows"][0]["elements"];
+            dynamic matrixOverview = data_results["rows"][0]["elements"][0];
 
             if (data_results["status"].Value == "OK")
             {
                 dynamic km = matrixOverview["distance"]["text"].Value;
-                string p = Convert.ToString(km);
-                //var kma= (string)matrixOverview["distance"]["text"].Value;
-                
-                return p;
+                string str_km = Convert.ToString(km);
+                return str_km;
             }
             else
                 return null;

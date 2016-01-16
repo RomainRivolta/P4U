@@ -15,5 +15,6 @@ namespace P4U
         public string PlaceId { get; set; }
         public string Address { get; set; }
         public string PageToken { get; set; }
+        public string Distance { get; set; }
     }
 }

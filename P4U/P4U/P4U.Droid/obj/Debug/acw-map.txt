@@ -6,6 +6,10 @@ P4U.Droid.MainActivity, P4U.Droid;md579456ae394a78074b56c6cdab70c2a02.MainActivi
 P4U.Droid.MainActivity, P4U.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md579456ae394a78074b56c6cdab70c2a02.MainActivity
 P4U.Droid.MainActivity;md579456ae394a78074b56c6cdab70c2a02.MainActivity
 p4u.droid.MainActivity;md579456ae394a78074b56c6cdab70c2a02.MainActivity
+P4U.Droid.PrefsFragment, P4U.Droid;md579456ae394a78074b56c6cdab70c2a02.PrefsFragment
+P4U.Droid.PrefsFragment, P4U.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md579456ae394a78074b56c6cdab70c2a02.PrefsFragment
+P4U.Droid.PrefsFragment;md579456ae394a78074b56c6cdab70c2a02.PrefsFragment
+p4u.droid.PrefsFragment;md579456ae394a78074b56c6cdab70c2a02.PrefsFragment
 P4U.Droid.ResultActivity, P4U.Droid;md579456ae394a78074b56c6cdab70c2a02.ResultActivity
 P4U.Droid.ResultActivity, P4U.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md579456ae394a78074b56c6cdab70c2a02.ResultActivity
 P4U.Droid.ResultActivity;md579456ae394a78074b56c6cdab70c2a02.ResultActivity
@@ -38,6 +42,14 @@ Android.Support.V4.Media.Session.MediaSessionCompat/IOnActiveChangeListenerImple
 Android.Support.V4.Media.Session.MediaSessionCompat+IOnActiveChangeListenerImplementor, Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;mono.android.support.v4.media.session.MediaSessionCompat_OnActiveChangeListenerImplementor
 Android.Support.V4.Media.Session.MediaSessionCompat.IOnActiveChangeListenerImplementor;mono.android.support.v4.media.session.MediaSessionCompat_OnActiveChangeListenerImplementor
 mono.android.support.v4.media.session.MediaSessionCompat_OnActiveChangeListenerImplementor;mono.android.support.v4.media.session.MediaSessionCompat_OnActiveChangeListenerImplementor
+Android.Support.V4.View.ActionProvider/ISubUiVisibilityListenerImplementor, Xamarin.Android.Support.v4;mono.android.support.v4.view.ActionProvider_SubUiVisibilityListenerImplementor
+Android.Support.V4.View.ActionProvider+ISubUiVisibilityListenerImplementor, Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;mono.android.support.v4.view.ActionProvider_SubUiVisibilityListenerImplementor
+Android.Support.V4.View.ActionProvider.ISubUiVisibilityListenerImplementor;mono.android.support.v4.view.ActionProvider_SubUiVisibilityListenerImplementor
+mono.android.support.v4.view.ActionProvider_SubUiVisibilityListenerImplementor;mono.android.support.v4.view.ActionProvider_SubUiVisibilityListenerImplementor
+Android.Support.V4.View.ActionProvider/IVisibilityListenerImplementor, Xamarin.Android.Support.v4;mono.android.support.v4.view.ActionProvider_VisibilityListenerImplementor
+Android.Support.V4.View.ActionProvider+IVisibilityListenerImplementor, Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;mono.android.support.v4.view.ActionProvider_VisibilityListenerImplementor
+Android.Support.V4.View.ActionProvider.IVisibilityListenerImplementor;mono.android.support.v4.view.ActionProvider_VisibilityListenerImplementor
+mono.android.support.v4.view.ActionProvider_VisibilityListenerImplementor;mono.android.support.v4.view.ActionProvider_VisibilityListenerImplementor
 Android.Support.V4.Widget.DrawerLayout/IDrawerListenerImplementor, Xamarin.Android.Support.v4;mono.android.support.v4.widget.DrawerLayout_DrawerListenerImplementor
 Android.Support.V4.Widget.DrawerLayout+IDrawerListenerImplementor, Xamarin.Android.Support.v4, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;mono.android.support.v4.widget.DrawerLayout_DrawerListenerImplementor
 Android.Support.V4.Widget.DrawerLayout.IDrawerListenerImplementor;mono.android.support.v4.widget.DrawerLayout_DrawerListenerImplementor

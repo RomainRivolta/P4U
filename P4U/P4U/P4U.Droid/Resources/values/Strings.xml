@@ -2,4 +2,5 @@
 <resources>
   <string name="app_name">P4U</string>
   <string name="search_title">Search</string>
+  <string name="settings_title">Setting</string>
 </resources>

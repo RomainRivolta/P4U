@@ -59,6 +59,7 @@ namespace P4U.Droid.Base_Adapter
             TextView textViewRueResult = view.FindViewById<TextView>(Resource.Id.textViewRueResult);
             TextView textViewPaysEtVilleEtCPResult = view.FindViewById<TextView>(Resource.Id.textViewPaysEtVilleEtCPResult);
             TextView textViewMoreData = view.FindViewById<TextView>(Resource.Id.textViewMoreData);
+            TextView textViewDistance = view.FindViewById<TextView>(Resource.Id.textViewDistance);
             ImageView imageViewPictureResult = view.FindViewById<ImageView>(Resource.Id.imageViewPictureResult);
 
             if (position != Count - 1)
@@ -82,6 +83,9 @@ namespace P4U.Droid.Base_Adapter
                 textViewPaysEtVilleEtCPResult.Text = addr;
                 textViewPaysEtVilleEtCPResult.Visibility = ViewStates.Visible;
 
+                textViewDistance.Text = item.Distance;
+                textViewDistance.Visibility = ViewStates.Visible;
+
                 textViewMoreData.Visibility = ViewStates.Gone;
 
                 Square.Picasso.Picasso.With(context).Load(item.Picture).Into(imageViewPictureResult);
@@ -96,6 +100,7 @@ namespace P4U.Droid.Base_Adapter
                 textViewPaysEtVilleEtCPResult.Visibility = ViewStates.Gone;
                 textViewRueResult.Visibility = ViewStates.Gone;
                 imageViewPictureResult.Visibility = ViewStates.Gone;
+                textViewDistance.Visibility = ViewStates.Gone;
 
             }
             return view;

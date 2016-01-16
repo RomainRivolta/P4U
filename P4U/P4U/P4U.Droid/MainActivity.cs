@@ -9,10 +9,12 @@ using Android.Widget;
 using System;
 using P4U.Droid.Singleton;
 using Android.Views;
+using Android.Support.V4.View;
+
 
 namespace P4U.Droid
 {
-    [Activity(Label = "@string/app_name")]
+    [Activity(Label = "@string/app_name",Icon = "@drawable/Icon")]
     public class MainActivity : AppCompatActivity
     {
         LocationManager locMgr;
@@ -22,11 +24,41 @@ namespace P4U.Droid
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.test, menu);
+            MenuInflater.Inflate(Resource.Menu.menu_toolbar, menu);
             var item = menu.FindItem(Resource.Id.action_search);
-            return true;
+            var searchView = MenuItemCompat.GetActionView(item);
+            SearchView _searchView = searchView.JavaCast<SearchView>();
+            _searchView.QueryTextSubmit += (s, e)=>{
+
+                string search = e.Query;
+                string longitude = SingletonLocation.Instance.currentLocation.Longitude.ToString().Replace(",", ".");
+                string latitude = SingletonLocation.Instance.currentLocation.Latitude.ToString().Replace(",", ".");
+
+                Intent resultActivity = new Intent(this, typeof(ResultActivity));
+                resultActivity.PutExtra("Search", search);
+                resultActivity.PutExtra("longitude", longitude);
+                resultActivity.PutExtra("latitude", latitude);
+                StartActivity(resultActivity);
+
+            };
+
+            return base.OnCreateOptionsMenu(menu);
         }
 
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.action_settings:
+                    Toast.MakeText(this, "s", ToastLength.Long).Show();
+                    //SupportFragmentManager.BeginTransaction().Replace(Resource.Id.contentPanel,new PrefsFragment()).Commit();
+                    FragmentManager.BeginTransaction().Replace(Resource.Id.contentPanel,new PrefsFragment()).Commit();
+                break;
+
+            }
+            return base.OnOptionsItemSelected(item);
+        }
 
         protected override void OnCreate (Bundle bundle)
 		{
@@ -37,10 +69,13 @@ namespace P4U.Droid
 
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
-
+            
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
             SupportActionBar.Title = "Home";
+            SupportActionBar.SetDisplayShowHomeEnabled(true);
+            SupportActionBar.SetLogo(Resource.Drawable.Icon);
+            SupportActionBar.SetDisplayUseLogoEnabled(true);
 
             // Grid view home
             var gridView = FindViewById<GridView>(Resource.Id.gridViewHome);
@@ -82,12 +117,14 @@ namespace P4U.Droid
                 Toast.MakeText(this, "Can't determine the current position", ToastLength.Long).Show();
                 return;
             }
-            string selectItem = lstGrid[args.Position].Type;
+            string selectItemType = lstGrid[args.Position].Type;
+            string selectItemName = lstGrid[args.Position].Name;
             string longitude = SingletonLocation.Instance.currentLocation.Longitude.ToString().Replace(",", ".");
             string latitude = SingletonLocation.Instance.currentLocation.Latitude.ToString().Replace(",", ".");
 
             Intent resultActivity = new Intent(this, typeof(ResultActivity));
-            resultActivity.PutExtra("SelectType", selectItem);
+            resultActivity.PutExtra("SelectType", selectItemType);
+            resultActivity.PutExtra("SelectName", selectItemName);
             resultActivity.PutExtra("longitude", longitude);
             resultActivity.PutExtra("latitude", latitude);
 

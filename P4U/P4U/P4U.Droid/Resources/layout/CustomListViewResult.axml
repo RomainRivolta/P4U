@@ -20,25 +20,38 @@
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:id="@+id/imageViewPictureResult" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageViewPictureResult"
+        android:layout_toLeftOf="@+id/textViewDistance"
+        android:orientation="vertical">
+        <TextView
+            android:text="Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:id="@+id/textViewNameResult" />
+        <TextView
+            android:text="Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:id="@+id/textViewRueResult" />
+        <TextView
+            android:text="Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:id="@+id/textViewPaysEtVilleEtCPResult" />
+    </LinearLayout>
     <TextView
         android:text="Text"
-        android:layout_alignTop="@+id/imageViewPictureResult"
-        android:layout_toRightOf="@+id/imageViewPictureResult"
-        android:layout_width="match_parent"
+        android:singleLine="true"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewNameResult" />
-    <TextView
-        android:text="Text"
-        android:layout_below="@+id/textViewNameResult"
-        android:layout_toRightOf="@+id/imageViewPictureResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewRueResult" />
-    <TextView
-        android:text="Text"
-        android:layout_below="@+id/textViewRueResult"
-        android:layout_toRightOf="@+id/imageViewPictureResult"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textViewPaysEtVilleEtCPResult" />
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:id="@+id/textViewDistance" />
 </RelativeLayout>

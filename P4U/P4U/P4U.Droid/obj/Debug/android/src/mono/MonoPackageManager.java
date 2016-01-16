@@ -87,6 +87,8 @@ class MonoPackageManager_Resources {
 		"Square.Picasso.dll",
 		"Xamarin.Android.Support.v4.dll",
 		"Xamarin.Android.Support.v7.AppCompat.dll",
+		"Xamarin.Android.Support.v7.Preference.dll",
+		"Xamarin.Android.Support.v7.RecyclerView.dll",
 		"System.ServiceModel.Internals.dll",
 	};
 	public static final String[] Dependencies = new String[]{
