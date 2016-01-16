@@ -9,6 +9,8 @@ D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Square.
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Square.Picasso.dll
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Xamarin.Android.Support.v4.dll
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Xamarin.Android.Support.v7.AppCompat.dll
+D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Xamarin.Android.Support.v7.Preference.dll
+D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Xamarin.Android.Support.v7.RecyclerView.dll
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\P4U.pdb
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Newtonsoft.Json.xml
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\P4U.Droid.csprojResolveAssemblyReference.cache
@@ -100,11 +102,8 @@ D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\res\dra
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\res\drawable-xxhdpi\ic_settings.png
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\res\drawable-xxxhdpi\ic_settings.png
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\res\menu\menu_toolbar.xml
+D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\res\xml\preferences.xml
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\R.cs.flag
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\uploadflags.txt
-D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\res\xml\preferences.xml
-D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Xamarin.Android.Support.v7.Preference.dll
-D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Xamarin.Android.Support.v7.RecyclerView.dll
-D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\P4U.dll.mdb
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\P4U.Droid.dll.mdb
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\P4U.Droid.dll.mdb

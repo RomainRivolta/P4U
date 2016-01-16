@@ -6,14 +6,19 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
-    <GridView
-        android:layout_below="@+id/toolbar"
+    <LinearLayout
+        android:id="@+id/content_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/gridViewHome"
-        android:columnWidth="90dp"
-        android:numColumns="3"
-        android:verticalSpacing="10dp"
-        android:stretchMode="columnWidth"
-        android:gravity="center" />
+        android:layout_height="match_parent">
+        <GridView
+            android:layout_below="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/gridViewHome"
+            android:columnWidth="90dp"
+            android:numColumns="3"
+            android:verticalSpacing="10dp"
+            android:stretchMode="columnWidth"
+            android:gravity="center" />
+    </LinearLayout>
 </RelativeLayout>

@@ -51,12 +51,10 @@ namespace P4U.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.action_settings:
-                    Toast.MakeText(this, "s", ToastLength.Long).Show();
-                    //SupportFragmentManager.BeginTransaction().Replace(Resource.Id.contentPanel,new PrefsFragment()).Commit();
-                    FragmentManager.BeginTransaction().Replace(Resource.Id.contentPanel,new PrefsFragment()).Commit();
-                break;
-
+                    FragmentManager.BeginTransaction().Replace(Resource.Id.content_main,new PrefsFragment()).Commit();
+                    break;
             }
+
             return base.OnOptionsItemSelected(item);
         }
 
