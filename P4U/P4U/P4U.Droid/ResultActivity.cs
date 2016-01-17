@@ -73,12 +73,13 @@ namespace P4U.Droid
         {
             if (e.Position != RESULT_PLACE_SEARCH.Count)
             {
-                string query = core.PlaceDetailsResponses(RESULT_PLACE_SEARCH[e.Position].PlaceId);
-                var lstPlaceDetails = core.GetPlaceDetails(query).Result;
+                //string query = core.PlaceDetailsResponses(RESULT_PLACE_SEARCH[e.Position].PlaceId);
+                //var lstPlaceDetails = core.GetPlaceDetails(query).Result;
 
                 Intent resultActivity = new Intent(this, typeof(DetailActivity));
-                var res = Newtonsoft.Json.JsonConvert.SerializeObject(lstPlaceDetails);
-                resultActivity.PutExtra("ResultMatrix", res);
+                //var res = Newtonsoft.Json.JsonConvert.SerializeObject(lstPlaceDetails);
+                //resultActivity.PutExtra("ResultMatrix", res);
+                resultActivity.PutExtra("ResulPlaceId", RESULT_PLACE_SEARCH[e.Position].PlaceId);
                 StartActivity(resultActivity);
             }
             else

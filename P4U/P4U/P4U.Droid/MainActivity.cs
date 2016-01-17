@@ -51,7 +51,8 @@ namespace P4U.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.action_settings:
-                    FragmentManager.BeginTransaction().Replace(Resource.Id.content_main,new PrefsFragment()).Commit();
+                    
+                    FragmentManager.BeginTransaction().Replace(Resource.Id.gridViewHome, new PrefsFragment()).Commit();
                     break;
             }
 

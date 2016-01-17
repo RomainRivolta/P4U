@@ -25,7 +25,7 @@ namespace P4U.WinPhone
         public MainPage()
         {
             this.InitializeComponent();
-
+          
             this.NavigationCacheMode = NavigationCacheMode.Required;
         }
 

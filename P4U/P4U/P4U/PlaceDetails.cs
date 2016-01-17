@@ -12,11 +12,11 @@ namespace P4U
     {
         public string Name { get; set; }
         public string Rating { get; set; }
-        //public string Website { get; set; }
-        //public string InternationalPhoneNumber { get; set; }
+        public string Website { get; set; }
+        public string InternationalPhoneNumber { get; set; }
         //public string WeekdayText { get; set; }
         //public string OpenNow { get; set; }
-        //public string FormattedAddress { get; set; }
-        
+        public string FormattedAddress { get; set; }
+
     }
 }

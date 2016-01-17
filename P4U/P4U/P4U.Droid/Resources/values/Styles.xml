@@ -2,7 +2,7 @@
 <resources>
   
   <style name="Theme.Splash" parent="android:Theme">
-    <item name="android:windowBackground">@drawable/Icon</item>
+    <item name="android:windowBackground">@drawable/splash_screen</item>
     <item name="android:windowNoTitle">true</item>
   </style>
 
@@ -10,7 +10,7 @@
   </style>
   
   <style name="MyTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
-    <item name="colorPrimary">#2196F3</item>
+    <item name="colorPrimary">#f24235</item>
     <item name="windowActionBar">false</item>
     <item name="windowNoTitle">true</item>
   </style>

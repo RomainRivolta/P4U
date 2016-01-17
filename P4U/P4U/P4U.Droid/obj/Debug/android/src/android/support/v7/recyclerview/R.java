@@ -1956,7 +1956,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static int chronometer=0x7f070064;
         public static int collapseActionView=0x7f07001d;
         public static int contentPanel=0x7f070032;
-        public static int content_main=0x7f07005a;
+        public static int content_main=0x7f07005b;
         public static int custom=0x7f070038;
         public static int customPanel=0x7f070037;
         public static int decor_content_parent=0x7f070040;
@@ -2039,7 +2039,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static int time=0x7f070063;
         public static int title=0x7f07002b;
         public static int title_template=0x7f070030;
-        public static int toolbar=0x7f07005b;
+        public static int toolbar=0x7f07005a;
         public static int topPanel=0x7f07002f;
         public static int up=0x7f070009;
         public static int useLogo=0x7f070013;

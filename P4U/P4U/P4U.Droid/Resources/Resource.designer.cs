@@ -1614,8 +1614,11 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f020053
 			public const int Icon = 2130837587;
 			
+			// aapt resource value: 0x7f020055
+			public const int notification_template_icon_bg = 2130837589;
+			
 			// aapt resource value: 0x7f020054
-			public const int notification_template_icon_bg = 2130837588;
+			public const int splash_screen = 2130837588;
 			
 			static Drawable()
 			{
@@ -1630,8 +1633,8 @@ namespace P4U.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f07005d
-			public const int action0 = 2131165277;
+			// aapt resource value: 0x7f070060
+			public const int action0 = 2131165280;
 			
 			// aapt resource value: 0x7f070042
 			public const int action_bar = 2131165250;
@@ -1657,8 +1660,8 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f070043
 			public const int action_context_bar = 2131165251;
 			
-			// aapt resource value: 0x7f070061
-			public const int action_divider = 2131165281;
+			// aapt resource value: 0x7f070064
+			public const int action_divider = 2131165284;
 			
 			// aapt resource value: 0x7f070003
 			public const int action_menu_divider = 2131165187;
@@ -1675,11 +1678,11 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f070024
 			public const int action_mode_close_button = 2131165220;
 			
-			// aapt resource value: 0x7f070072
-			public const int action_search = 2131165298;
+			// aapt resource value: 0x7f070075
+			public const int action_search = 2131165301;
 			
-			// aapt resource value: 0x7f070073
-			public const int action_settings = 2131165299;
+			// aapt resource value: 0x7f070076
+			public const int action_settings = 2131165302;
 			
 			// aapt resource value: 0x7f070025
 			public const int activity_chooser_view_content = 2131165221;
@@ -1696,23 +1699,20 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f07002c
 			public const int buttonPanel = 2131165228;
 			
-			// aapt resource value: 0x7f07005e
-			public const int cancel_action = 2131165278;
+			// aapt resource value: 0x7f070061
+			public const int cancel_action = 2131165281;
 			
 			// aapt resource value: 0x7f07003a
 			public const int checkbox = 2131165242;
 			
-			// aapt resource value: 0x7f070064
-			public const int chronometer = 2131165284;
+			// aapt resource value: 0x7f070067
+			public const int chronometer = 2131165287;
 			
 			// aapt resource value: 0x7f07001d
 			public const int collapseActionView = 2131165213;
 			
 			// aapt resource value: 0x7f070032
 			public const int contentPanel = 2131165234;
-			
-			// aapt resource value: 0x7f07005b
-			public const int content_main = 2131165275;
 			
 			// aapt resource value: 0x7f070038
 			public const int custom = 2131165240;
@@ -1729,20 +1729,20 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f07000d
 			public const int disableHome = 2131165197;
 			
-			// aapt resource value: 0x7f07006e
-			public const int editTextSearch = 2131165294;
+			// aapt resource value: 0x7f070071
+			public const int editTextSearch = 2131165297;
 			
 			// aapt resource value: 0x7f070044
 			public const int edit_query = 2131165252;
 			
-			// aapt resource value: 0x7f070071
-			public const int edtSearch = 2131165297;
+			// aapt resource value: 0x7f070074
+			public const int edtSearch = 2131165300;
 			
 			// aapt resource value: 0x7f07001a
 			public const int end = 2131165210;
 			
-			// aapt resource value: 0x7f070069
-			public const int end_padder = 2131165289;
+			// aapt resource value: 0x7f07006c
+			public const int end_padder = 2131165292;
 			
 			// aapt resource value: 0x7f070026
 			public const int expand_activities_button = 2131165222;
@@ -1750,8 +1750,8 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f070039
 			public const int expanded_menu = 2131165241;
 			
-			// aapt resource value: 0x7f07005c
-			public const int gridViewHome = 2131165276;
+			// aapt resource value: 0x7f07005f
+			public const int gridViewHome = 2131165279;
 			
 			// aapt resource value: 0x7f070052
 			public const int grid_text = 2131165266;
@@ -1765,8 +1765,8 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f07002a
 			public const int icon = 2131165226;
 			
-			// aapt resource value: 0x7f07006a
-			public const int icon_frame = 2131165290;
+			// aapt resource value: 0x7f07006d
+			public const int icon_frame = 2131165293;
 			
 			// aapt resource value: 0x7f07001e
 			public const int ifRoom = 2131165214;
@@ -1780,35 +1780,35 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f070054
 			public const int imageViewPictureResult = 2131165268;
 			
-			// aapt resource value: 0x7f070068
-			public const int info = 2131165288;
+			// aapt resource value: 0x7f07006b
+			public const int info = 2131165291;
 			
 			// aapt resource value: 0x7f070000
 			public const int item_touch_helper_previous_elevation = 2131165184;
 			
-			// aapt resource value: 0x7f070062
-			public const int line1 = 2131165282;
+			// aapt resource value: 0x7f070065
+			public const int line1 = 2131165285;
 			
-			// aapt resource value: 0x7f070066
-			public const int line3 = 2131165286;
+			// aapt resource value: 0x7f070069
+			public const int line3 = 2131165289;
 			
-			// aapt resource value: 0x7f07006c
-			public const int list = 2131165292;
+			// aapt resource value: 0x7f07006f
+			public const int list = 2131165295;
 			
 			// aapt resource value: 0x7f07000a
 			public const int listMode = 2131165194;
 			
-			// aapt resource value: 0x7f070070
-			public const int listViewResult = 2131165296;
+			// aapt resource value: 0x7f070073
+			public const int listViewResult = 2131165299;
 			
-			// aapt resource value: 0x7f07006b
-			public const int list_container = 2131165291;
+			// aapt resource value: 0x7f07006e
+			public const int list_container = 2131165294;
 			
 			// aapt resource value: 0x7f070029
 			public const int list_item = 2131165225;
 			
-			// aapt resource value: 0x7f070060
-			public const int media_actions = 2131165280;
+			// aapt resource value: 0x7f070063
+			public const int media_actions = 2131165283;
 			
 			// aapt resource value: 0x7f07001b
 			public const int middle = 2131165211;
@@ -1837,6 +1837,9 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f07003c
 			public const int radio = 2131165244;
 			
+			// aapt resource value: 0x7f07005e
+			public const int ratingBar = 2131165278;
+			
 			// aapt resource value: 0x7f070015
 			public const int screen = 2131165205;
 			
@@ -1849,8 +1852,8 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f070034
 			public const int scrollView = 2131165236;
 			
-			// aapt resource value: 0x7f07006f
-			public const int search = 2131165295;
+			// aapt resource value: 0x7f070072
+			public const int search = 2131165298;
 			
 			// aapt resource value: 0x7f070046
 			public const int search_badge = 2131165254;
@@ -1912,29 +1915,38 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f070018
 			public const int src_over = 2131165208;
 			
-			// aapt resource value: 0x7f07005f
-			public const int status_bar_latest_event_content = 2131165279;
+			// aapt resource value: 0x7f070062
+			public const int status_bar_latest_event_content = 2131165282;
 			
 			// aapt resource value: 0x7f07004d
 			public const int submit_area = 2131165261;
 			
-			// aapt resource value: 0x7f07006d
-			public const int switchWidget = 2131165293;
+			// aapt resource value: 0x7f070070
+			public const int switchWidget = 2131165296;
 			
 			// aapt resource value: 0x7f07000c
 			public const int tabMode = 2131165196;
 			
-			// aapt resource value: 0x7f070067
-			public const int text = 2131165287;
+			// aapt resource value: 0x7f07006a
+			public const int text = 2131165290;
 			
-			// aapt resource value: 0x7f070065
-			public const int text2 = 2131165285;
+			// aapt resource value: 0x7f070068
+			public const int text2 = 2131165288;
 			
 			// aapt resource value: 0x7f070035
 			public const int textSpacerNoButtons = 2131165237;
 			
-			// aapt resource value: 0x7f070059
-			public const int textViewDetailsName = 2131165273;
+			// aapt resource value: 0x7f07005d
+			public const int textViewDetailsAddress = 2131165277;
+			
+			// aapt resource value: 0x7f07005a
+			public const int textViewDetailsName = 2131165274;
+			
+			// aapt resource value: 0x7f07005b
+			public const int textViewDetailsPhone = 2131165275;
+			
+			// aapt resource value: 0x7f07005c
+			public const int textViewDetailsWeb = 2131165276;
 			
 			// aapt resource value: 0x7f070055
 			public const int textViewDistance = 2131165269;
@@ -1951,8 +1963,8 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f070057
 			public const int textViewRueResult = 2131165271;
 			
-			// aapt resource value: 0x7f070063
-			public const int time = 2131165283;
+			// aapt resource value: 0x7f070066
+			public const int time = 2131165286;
 			
 			// aapt resource value: 0x7f07002b
 			public const int title = 2131165227;
@@ -1960,8 +1972,8 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f070030
 			public const int title_template = 2131165232;
 			
-			// aapt resource value: 0x7f07005a
-			public const int toolbar = 2131165274;
+			// aapt resource value: 0x7f070059
+			public const int toolbar = 2131165273;
 			
 			// aapt resource value: 0x7f07002f
 			public const int topPanel = 2131165231;

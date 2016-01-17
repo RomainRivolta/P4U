@@ -73,7 +73,7 @@ namespace P4U
                 return null;
         }
 
-        public async Task<List<PlaceDetails>> GetPlaceDetails(string query)
+        public async Task<PlaceDetails> GetPlaceDetails(string query)
         {
             dynamic data_results = await DataService.GetDataFromService(query).ConfigureAwait(false);
             dynamic placeOverview = data_results["result"];
@@ -87,18 +87,20 @@ namespace P4U
                 //dynamic website = placeOverview["website"].Value == null ? "" : placeOverview["website"].Value;
                 //dynamic weekdayText = placeOverview["opening_hours"]["weekday_text"] == null ? "" : placeOverview["opening_hours"]["weekday_text"].Value; 
 
+                string rating = Convert.ToString(placeOverview["rating"].Value);
+
                 lstPlaceDetails.Add(new PlaceDetails()
                 {
-                    //FormattedAddress = placeOverview["formatted_address"].Value,
-                    //InternationalPhoneNumber = placeOverview["international_phone_number"].Value,
+                    FormattedAddress = placeOverview["formatted_address"].Value,
+                    InternationalPhoneNumber = placeOverview["international_phone_number"].Value,
                     Name = placeOverview["name"].Value,
-                    //Rating = rating,
-                    //Website = website,
+                    Rating = rating,
+                    Website = placeOverview["website"].Value
                     //OpenNow = openNow,
                     //WeekdayText = weekdayText
                 });
 
-                return lstPlaceDetails;
+                return lstPlaceDetails.FirstOrDefault();
             }
             else
                 return null;
