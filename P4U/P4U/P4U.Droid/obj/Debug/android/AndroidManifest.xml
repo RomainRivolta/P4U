@@ -7,6 +7,8 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <application android:theme="@style/MyTheme" android:label="@string/app_name" android:icon="@drawable/ic_launcher" android:name="mono.android.app.Application" android:allowBackup="true" android:debuggable="true">
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     <activity android:label="DetailActivity" android:name="md579456ae394a78074b56c6cdab70c2a02.DetailActivity" />
     <activity android:icon="@drawable/icon" android:label="@string/app_name" android:name="md579456ae394a78074b56c6cdab70c2a02.MainActivity" />
     <activity android:label="P4U" android:name="md579456ae394a78074b56c6cdab70c2a02.ResultActivity" />
