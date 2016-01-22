@@ -8,6 +8,11 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageViewDetails" />
     <TextView
         android:text="Text"
         android:layout_width="match_parent"

@@ -1,10 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-  <EditTextPreference android:title="Your Name"
-                      android:key="username"
-                      android:summary="Please provide your username"/>
-  <CheckBoxPreference android:title="Application Updates"
-                      android:defaultValue="false"
-                      android:summary="This option if selected will allow the application to check for latest versions."
-                      android:key="applicationUpdates" />
+
+
+  <!--<EditTextPreference android:title="@string/titlePrefsArround"
+                      android:key="numberPickerPerimetre"
+                      android:inputType="number"
+                      android:summary="@string/summaryPrefsArround"/>-->
+  <P4U.Droid.NumberPickerPreference
+    android:dialogLayout="@layout/number_pref"
+    android:title="@string/titlePrefsArround"
+    android:key="keyPerimetre"
+    />
+    <!--android:message="@string/summaryPrefsArround"-->
+  
+  <ListPreference
+      android:key="keyTransport"
+      android:title="@string/titlePrefsTransport"
+      android:summary="@string/summaryPrefsTransport"
+      android:dialogTitle="@string/dialogtitlePrefsTransport"
+      android:entries="@array/entriesTransport"
+      android:entryValues="@array/valuesTransport"
+      android:defaultValue="@string/defaultValueTransport" />
+
 </PreferenceScreen>

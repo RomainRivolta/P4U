@@ -17,6 +17,7 @@ namespace P4U
         //public string WeekdayText { get; set; }
         //public string OpenNow { get; set; }
         public string FormattedAddress { get; set; }
+        public string Picture { get; set; }
 
     }
 }

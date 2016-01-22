@@ -12,6 +12,7 @@ namespace P4U
         public string latitude { get; set; }
         public string longitude { get; set; }
 
+
         public string TextSearchRequestsByLocation(int radius,string query,string types="",string pagetoken = "")
         {
             return "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + query + "&pagetoken=" + pagetoken + "&location="+latitude+","+longitude+"&radius="+radius +"&types=" + types + "&key=" + key;
@@ -32,7 +33,12 @@ namespace P4U
             return "https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + latitude + "," + longitude + "&destinations=" + destinationLatitude + "," + destinationLongitude + "&mode=" + mode + "&language=fr-FR&key=" + key;
         }
 
-        public async Task<List<PlaceSearch>> GetPlaceSearch(string query, int max_width, int max_height)
+        public string StreetView(string lt,string lng,string size)
+        {
+            return "https://maps.googleapis.com/maps/api/streetview?location=" + lt + "," + lng + "&size="+size+"&key="+key;
+        }
+
+        public async Task<List<PlaceSearch>> GetPlaceSearch(string query, int max_width, int max_height,string mode,string size)
         {    
             dynamic data_results = await DataService.GetDataFromService(query).ConfigureAwait(false);
             dynamic placeOverview = data_results["results"];
@@ -45,26 +51,24 @@ namespace P4U
                 foreach (var item in placeOverview)
                 {
                     dynamic address = query.Contains("textsearch") ? item["formatted_address"].Value : item["vicinity"].Value;
-                    dynamic placePhoto = item["photos"]==null?item["icon"].Value: "https://maps.googleapis.com/maps/api/place/photo?maxwidth=" + max_width + "&maxheight=" + max_height + "&photoreference=" + item["photos"][0]["photo_reference"].Value + "&key=AIzaSyCRaT-68xS7CkjDlvVygW_hWdkBbs4mb-Y";
-
                     dynamic longitudeDestinations = item["geometry"]["location"]["lng"].Value;
                     dynamic latitudeDestinations = item["geometry"]["location"]["lat"].Value;
 
                     string str_latitudeDestinations = Convert.ToString(latitudeDestinations);
                     string str_longitudeDestinations =  Convert.ToString(longitudeDestinations);
 
-                    string queryMatrix = DistanceMatrixRequests(str_latitudeDestinations, str_longitudeDestinations, "driving");
-
+                    string queryMatrix = DistanceMatrixRequests(str_latitudeDestinations, str_longitudeDestinations, mode);
+                    string streetViewQuery = StreetView(str_latitudeDestinations, str_longitudeDestinations,size);
                     string km = GetMatrix(queryMatrix);
 
                     lstPlaceSearch.Add(new PlaceSearch()
                     {
                         Name = item["name"].Value,
-                        Picture = placePhoto ,
+                        Picture = streetViewQuery,
                         PlaceId = item["place_id"].Value,
                         Address = address,
                         PageToken = nextPageToken,
-                        Distance = km
+                        Distance = km,
                     });
                 }
                 return lstPlaceSearch;
@@ -80,8 +84,6 @@ namespace P4U
 
             if (data_results["status"].Value == "OK")
             {
-                List<PlaceDetails> lstPlaceDetails = new List<PlaceDetails>();
-
                 //dynamic openNow = placeOverview["opening_hours"] == null ? "" : placeOverview["opening_hours"]["open_now"].Value;
                 //dynamic rating = placeOverview["rating"].Value == null ? "" : placeOverview["rating"].Value;
                 //dynamic website = placeOverview["website"].Value == null ? "" : placeOverview["website"].Value;
@@ -89,18 +91,16 @@ namespace P4U
 
                 string rating = Convert.ToString(placeOverview["rating"].Value);
 
-                lstPlaceDetails.Add(new PlaceDetails()
+                PlaceDetails placeDetails = new PlaceDetails()
                 {
+                    Name = placeOverview["name"].Value,
                     FormattedAddress = placeOverview["formatted_address"].Value,
                     InternationalPhoneNumber = placeOverview["international_phone_number"].Value,
-                    Name = placeOverview["name"].Value,
                     Rating = rating,
-                    Website = placeOverview["website"].Value
-                    //OpenNow = openNow,
-                    //WeekdayText = weekdayText
-                });
+                    Website = placeOverview["website"].Value,
+                };
 
-                return lstPlaceDetails.FirstOrDefault();
+                return placeDetails;
             }
             else
                 return null;

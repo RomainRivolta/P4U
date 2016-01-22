@@ -1,0 +1,1 @@
+<resources><string-array name="entriesTransport"><item>Voiture</item><item>A pied</item><item>Vélo</item></string-array><string-array name="valuesTransport"><item>driving</item><item>walking</item><item>bicycling</item></string-array></resources>

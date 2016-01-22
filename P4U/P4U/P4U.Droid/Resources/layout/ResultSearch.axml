@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <EditText
+    <!--<EditText
             android:layout_width="match_parent"
             android:layout_weight="1"
             android:hint="Search"
@@ -20,7 +20,7 @@
             android:text="Search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/search" />
+            android:id="@+id/search" />-->
     <!--<ImageButton
             android:id="@+id/ImageButtonLocate"
             android:src="@drawable/ic_location"

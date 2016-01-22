@@ -51,11 +51,11 @@ namespace P4U.Droid
             switch (item.ItemId)
             {
                 case Resource.Id.action_settings:
-                    
-                    FragmentManager.BeginTransaction().Replace(Resource.Id.gridViewHome, new PrefsFragment()).Commit();
+                    Intent intentSettings = new Intent(this, typeof(SettingsActivity));
+                    StartActivity(intentSettings);
                     break;
-            }
 
+            }
             return base.OnOptionsItemSelected(item);
         }
 
