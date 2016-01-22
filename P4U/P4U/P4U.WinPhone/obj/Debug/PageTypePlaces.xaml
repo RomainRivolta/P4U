@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="P4U.WinPhone.PageTypePlaces"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:P4U.WinPhone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <GridView x:Name="GridViewPlaces" Margin="25"
+   Width="auto" Height="auto" ItemsSource="{Binding}" >
+        <GridView.ItemTemplate>
+            <DataTemplate>
+                <StackPanel Orientation="Horizontal">
+                    <ListView x:ConnectionId='1' HorizontalAlignment="Center" IsItemClickEnabled="True"                           Tag="{Binding Name}">
+                        <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" Tag="{Binding Name}"/>
+                        <Image Source="{Binding ImageType}" Height="140" Width="140" HorizontalAlignment="Center" Tag="{Binding Name}"/>
+                    </ListView>
+                </StackPanel>
+            </DataTemplate>
+        </GridView.ItemTemplate>
+    </GridView>
+</Page>
+

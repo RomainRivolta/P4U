@@ -1,0 +1,2 @@
+C:\Git\P4U\P4U\P4U.WinPhone\P4U.WinPhone.csproj;neutral
+C:\Git\P4U\P4U\P4U\P4U.csproj;neutral

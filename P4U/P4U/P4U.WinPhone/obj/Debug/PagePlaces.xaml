@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="P4U.WinPhone.PagePlaces"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:P4U.WinPhone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+
+    <ListBox x:Name="ListBoxPlaces" Margin="5"
+   Width="auto" Height="auto" HorizontalAlignment="Left"
+   ItemsSource="{Binding}" >
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <StackPanel Orientation="Horizontal" Margin="2">
+                    <Image Source="{Binding Picture}" Height="80" Width="80" Margin="2" HorizontalAlignment="Left"/>
+                    <ListBox>
+                        <TextBlock Text="{Binding Address}" Margin="2" />
+                        <TextBlock Text="{Binding Name}" Margin="2" />
+                    </ListBox>
+                </StackPanel>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
+</Page>
+    
+

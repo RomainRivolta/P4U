@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>WIN-VB9TF0BHREP</Machine>
+    <WindowsUser>thiba</WindowsUser>
+    <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
+    <TargetOsVersion>6.3</TargetOsVersion>
+    <TargetOsDescription>Windows Phone 8.1</TargetOsDescription>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>8877204e-d7ab-4c2a-ba85-df930a47ce48</PackageIdentityName>
+    <IntermediateOutputPath>C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Git\P4U\P4U\P4U.WinPhone\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\bin\Debug\P4U.WinPhone.exe">
+      <PackagePath>P4U.WinPhone.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U\bin\Debug\P4U.dll">
+      <PackagePath>P4U.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U\bin\Debug\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Assets\Logo.scale-240.png">
+      <PackagePath>Assets\Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Assets\SmallLogo.scale-240.png">
+      <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Assets\SplashScreen.scale-240.png">
+      <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Assets\Square71x71Logo.scale-240.png">
+      <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Assets\StoreLogo.scale-240.png">
+      <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Assets\WideLogo.scale-240.png">
+      <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Images\Icon.png">
+      <PackagePath>Images\Icon.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Images\ic_bar.png">
+      <PackagePath>Images\ic_bar.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Images\ic_bus_station.png">
+      <PackagePath>Images\ic_bus_station.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Images\ic_cafe.png">
+      <PackagePath>Images\ic_cafe.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Images\ic_cinema.png">
+      <PackagePath>Images\ic_cinema.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Images\ic_food.png">
+      <PackagePath>Images\ic_food.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Images\ic_gas_station.png">
+      <PackagePath>Images\ic_gas_station.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Images\ic_location.png">
+      <PackagePath>Images\ic_location.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Images\ic_parking.png">
+      <PackagePath>Images\ic_parking.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Images\ic_search_white_24dp.png">
+      <PackagePath>Images\ic_search_white_24dp.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Images\ic_shopping_mall.png">
+      <PackagePath>Images\ic_shopping_mall.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Images\ic_subway.png">
+      <PackagePath>Images\ic_subway.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Images\ic_taxi_stand.png">
+      <PackagePath>Images\ic_taxi_stand.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\Images\ic_train.png">
+      <PackagePath>Images\ic_train.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\bin\Debug\P4U.WinPhone.xr.xml">
+      <PackagePath>P4U.WinPhone.xr.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\bin\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\bin\Debug\PageTypePlaces.xbf">
+      <PackagePath>PageTypePlaces.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\bin\Debug\PagePlaces.xbf">
+      <PackagePath>PagePlaces.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Git\P4U\P4U\P4U.WinPhone\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
