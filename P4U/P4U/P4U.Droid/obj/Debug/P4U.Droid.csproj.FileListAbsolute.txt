@@ -125,6 +125,10 @@ D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Xamarin
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Xamarin.Android.Support.v7.AppCompat.dll
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Xamarin.Android.Support.v7.Preference.dll
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Xamarin.Android.Support.v7.RecyclerView.dll
+D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Xamarin.GooglePlayServices.Base.dll
+D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Xamarin.GooglePlayServices.Basement.dll
+D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Xamarin.GooglePlayServices.Location.dll
+D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Xamarin.GooglePlayServices.Maps.dll
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\P4U.pdb
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\Newtonsoft.Json.xml
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\P4U.Droid.csprojResolveAssemblyReference.cache
@@ -232,6 +236,5 @@ D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\res\dra
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\res\values\arrays.xml
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\R.cs.flag
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\uploadflags.txt
-D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\P4U.dll.mdb
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\obj\Debug\P4U.Droid.dll.mdb
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.Droid\bin\Debug\P4U.Droid.dll.mdb

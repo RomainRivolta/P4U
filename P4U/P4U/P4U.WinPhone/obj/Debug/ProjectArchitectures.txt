@@ -1,2 +1,0 @@
-D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U.WinPhone\P4U.WinPhone.csproj;neutral
-D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U\P4U.csproj;neutral
