@@ -3,4 +3,7 @@
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DeviceId>33D7CE1E-0D98-4E5C-89B9-4AD2183E2DB6</DeviceId>
+  </PropertyGroup>
 </Project>
