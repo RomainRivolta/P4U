@@ -57,8 +57,8 @@ namespace P4U
                     string str_latitudeDestinations = Convert.ToString(latitudeDestinations);
                     string str_longitudeDestinations =  Convert.ToString(longitudeDestinations);
 
-                    string queryMatrix = DistanceMatrixRequests(str_latitudeDestinations, str_longitudeDestinations, mode);
-                    string streetViewQuery = StreetView(str_latitudeDestinations, str_longitudeDestinations,size);
+                    string queryMatrix = DistanceMatrixRequests(str_latitudeDestinations.Replace(",","."), str_longitudeDestinations.Replace(",", "."), mode);
+                    string streetViewQuery = StreetView(str_latitudeDestinations.Replace(",", "."), str_longitudeDestinations.Replace(",", "."), size);
                     string km = GetMatrix(queryMatrix);
 
                     lstPlaceSearch.Add(new PlaceSearch()
