@@ -70,7 +70,7 @@ namespace P4U.Droid
             CreateGoogleApi();
 
             // Get a reference to the locationManager
-            locMgr = GetSystemService(Context.LocationService) as LocationManager;
+            //locMgr = GetSystemService(Context.LocationService) as LocationManager;
 
             // Set our view from the "main" layout resource
             SetContentView (Resource.Layout.Main);
@@ -91,17 +91,15 @@ namespace P4U.Droid
 
         protected override void OnStop()
         {
-            mGoogleApi.Disconnect();
             base.OnStop();
+            mGoogleApi.Disconnect();
         }
 
         protected override void OnStart()
         {
-            mGoogleApi.Connect();
             base.OnStart();
+            mGoogleApi.Connect();
         }
-
-
 
         public void CreateGoogleApi()
         {
@@ -111,11 +109,11 @@ namespace P4U.Droid
                             .AddApi(LocationServices.API)
                             .Build();
             createLocationRequest();
-            StartLocationUpdates();
+            
         }
         protected void createLocationRequest()
         {
-            LocationRequest mLocationRequest = new LocationRequest();
+            mLocationRequest = new LocationRequest();
             mLocationRequest.SetInterval(10000);
             mLocationRequest.SetFastestInterval(5000);
             mLocationRequest.SetPriority(LocationRequest.PriorityHighAccuracy);
@@ -149,15 +147,19 @@ namespace P4U.Droid
         void GridViewHome_Click(object sender,AdapterView.ItemClickEventArgs args)
         {
             var lstGrid = GridViewHome.getGridViewHome();
-            if (Singleton.SingletonLocation.Instance.currentLocation == null)
-            {
-                Toast.MakeText(this, "Can't determine the current position", ToastLength.Long).Show();
-                return;
-            }
+            //if (Singleton.SingletonLocation.Instance.currentLocation == null)
+            //{
+            //    Toast.MakeText(this, "Can't determine the current position", ToastLength.Long).Show();
+            //    return;
+            //}
             string selectItemType = lstGrid[args.Position].Type;
             string selectItemName = lstGrid[args.Position].Name;
-            string longitude = SingletonLocation.Instance.currentLocation.Longitude.ToString().Replace(",", ".");
-            string latitude = SingletonLocation.Instance.currentLocation.Latitude.ToString().Replace(",", ".");
+            //string longitude = SingletonLocation.Instance.currentLocation.Longitude.ToString().Replace(",", ".");
+            //string latitude = SingletonLocation.Instance.currentLocation.Latitude.ToString().Replace(",", ".");
+
+            string longitude = currentLocation.Longitude.ToString().Replace(",", ".");
+            string latitude = currentLocation.Latitude.ToString().Replace(",", ".");
+
 
             Intent resultActivity = new Intent(this, typeof(ResultActivity));
             resultActivity.PutExtra("SelectType", selectItemType);
@@ -174,7 +176,7 @@ namespace P4U.Droid
             {
                 currentLocation = LocationServices.FusedLocationApi.GetLastLocation(mGoogleApi);
             }
-            
+            StartLocationUpdates();
         }
 
         protected void StartLocationUpdates()
