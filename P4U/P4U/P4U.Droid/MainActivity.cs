@@ -13,20 +13,19 @@ using Android.Support.V4.View;
 using Android.Gms.Common.Apis;
 using Android.Gms.Location;
 using Android.Gms.Common;
-using P4U.Droid.MyService;
-using Java.Lang;
 
 namespace P4U.Droid
 {
-    [Activity(Label = "@string/app_name",Icon = "@drawable/Icon", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity
+    [Activity(Label = "@string/app_name", Icon = "@drawable/Icon", MainLauncher = true)]
+    public class MainActivity : AppCompatActivity, GoogleApiClient.IConnectionCallbacks, GoogleApiClient.IOnConnectionFailedListener, Android.Gms.Location.ILocationListener
     {
+        LocationManager locMgr;
+        string locationProvider;
         const int MAX_WIDTH = 160;
         const int MAX_HEIGHT = 160;
-        bool isConfigurationChange = false;
-        bool mBound = false;
-        GoogleLocationServiceBinder binder;
-        GoogleLocationServiceConnection googleConnection;
+        protected GoogleApiClient mGoogleApi;
+        protected Location currentLocation;
+        protected LocationRequest mLocationRequest;
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -34,7 +33,7 @@ namespace P4U.Droid
             var item = menu.FindItem(Resource.Id.action_search);
             var searchView = MenuItemCompat.GetActionView(item);
             SearchView _searchView = searchView.JavaCast<SearchView>();
-            _searchView.QueryTextSubmit += (s, e)=>{
+            _searchView.QueryTextSubmit += (s, e) => {
 
                 string search = e.Query;
                 string longitude = SingletonLocation.Instance.currentLocation.Longitude.ToString().Replace(",", ".");
@@ -65,17 +64,20 @@ namespace P4U.Droid
             return base.OnOptionsItemSelected(item);
         }
 
-        protected override void OnCreate (Bundle bundle)
-		{
-			base.OnCreate (bundle);
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
 
             StartService(new Intent(this, typeof(MyService.GoogleLocationService)));
 
+            CreateGoogleApi();
 
+            // Get a reference to the locationManager
+            //locMgr = GetSystemService(Context.LocationService) as LocationManager;
 
             // Set our view from the "main" layout resource
-            SetContentView (Resource.Layout.Main);
-            
+            SetContentView(Resource.Layout.Main);
+
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
             SupportActionBar.Title = "Home";
@@ -88,49 +90,80 @@ namespace P4U.Droid
             var lstGrid = GridViewHome.getGridViewHome();
             gridView.Adapter = new Base_Adapter.GridViewHomeAdapter(this, lstGrid);
             gridView.ItemClick += GridViewHome_Click;
-
-            googleConnection = LastCustomNonConfigurationInstance as GoogleLocationServiceConnection;
-            if (googleConnection != null)
-                binder = googleConnection.Binder;
-        }
-
-        protected override void OnStart()
-        {
-            base.OnStart();
-            Intent intentService = new Intent(this, typeof(GoogleLocationService));
-            GoogleLocationServiceConnection mconnection = new GoogleLocationServiceConnection(this);
-            ApplicationContext.BindService(intentService, mconnection, Bind.AutoCreate);
         }
 
         protected override void OnStop()
         {
             base.OnStop();
-            
+            mGoogleApi.Disconnect();
         }
 
+        protected override void OnStart()
+        {
+            base.OnStart();
+            mGoogleApi.Connect();
+        }
+
+        public void CreateGoogleApi()
+        {
+            mGoogleApi = new GoogleApiClient.Builder(this)
+                            .AddConnectionCallbacks(this)
+                            .AddOnConnectionFailedListener(this)
+                            .AddApi(LocationServices.API)
+                            .Build();
+            createLocationRequest();
+
+        }
+        protected void createLocationRequest()
+        {
+            mLocationRequest = new LocationRequest();
+            mLocationRequest.SetInterval(10000);
+            mLocationRequest.SetFastestInterval(5000);
+            mLocationRequest.SetPriority(LocationRequest.PriorityHighAccuracy);
+        }
         protected override void OnResume()
         {
             base.OnResume();
+
+            //Criteria locationCriteria = new Criteria();
+            //locationCriteria.Accuracy = Accuracy.Fine;
+            //locationCriteria.PowerRequirement = Power.Medium;
+
+            //locationProvider = locMgr.GetBestProvider(locationCriteria, true);
+            //if (locationProvider != null)
+            //{
+            //    locMgr.RequestLocationUpdates(locationProvider, 2000, 1, SingletonLocation.Instance);
+            //}
+            //else
+            //{
+            //    Log.Info("Location", "No location providers available");
+            //}
         }
 
         protected override void OnPause()
         {
             base.OnPause();
+            //locMgr.RemoveUpdates(SingletonLocation.Instance);
+
+            LocationServices.FusedLocationApi.RemoveLocationUpdates(mGoogleApi, this);
         }
-      
-        void GridViewHome_Click(object sender,AdapterView.ItemClickEventArgs args)
+
+        void GridViewHome_Click(object sender, AdapterView.ItemClickEventArgs args)
         {
             var lstGrid = GridViewHome.getGridViewHome();
-
+            //if (Singleton.SingletonLocation.Instance.currentLocation == null)
+            //{
+            //    Toast.MakeText(this, "Can't determine the current position", ToastLength.Long).Show();
+            //    return;
+            //}
             string selectItemType = lstGrid[args.Position].Type;
             string selectItemName = lstGrid[args.Position].Name;
+            //string longitude = SingletonLocation.Instance.currentLocation.Longitude.ToString().Replace(",", ".");
+            //string latitude = SingletonLocation.Instance.currentLocation.Latitude.ToString().Replace(",", ".");
 
-
-            var a = binder.GetGoogleLocationService();
-              var currentLocation = a.getLocation();
-            
             string longitude = currentLocation.Longitude.ToString().Replace(",", ".");
             string latitude = currentLocation.Latitude.ToString().Replace(",", ".");
+
 
             Intent resultActivity = new Intent(this, typeof(ResultActivity));
             resultActivity.PutExtra("SelectType", selectItemType);
@@ -141,46 +174,33 @@ namespace P4U.Droid
             StartActivity(resultActivity);
         }
 
-        public override Java.Lang.Object OnRetainCustomNonConfigurationInstance()
+        public void OnConnected(Bundle connectionHint)
         {
-            base.OnRetainCustomNonConfigurationInstance();
-            isConfigurationChange = true;
-            return googleConnection;
+            if (currentLocation == null)
+            {
+                currentLocation = LocationServices.FusedLocationApi.GetLastLocation(mGoogleApi);
+            }
+            StartLocationUpdates();
         }
 
-        class GoogleLocationServiceConnection : Java.Lang.Object, IServiceConnection
+        protected void StartLocationUpdates()
         {
-            MainActivity activity;
-            GoogleLocationServiceBinder binder;
+            LocationServices.FusedLocationApi.RequestLocationUpdates(mGoogleApi, mLocationRequest, this);
+        }
 
-            public GoogleLocationServiceBinder Binder
-            {
-                get
-                {
-                    return binder;
-                }
-            }
+        public void OnConnectionSuspended(int cause)
+        {
+            throw new NotImplementedException();
+        }
 
-            public GoogleLocationServiceConnection(MainActivity activity)
-            {
-                this.activity = activity;
-            }
-            public void OnServiceConnected(ComponentName name, IBinder service)
-            {
-                GoogleLocationServiceBinder googleBinder = service as GoogleLocationServiceBinder;
-                if (googleBinder != null)
-                {
-                    var binder = service as GoogleLocationServiceBinder;
-                    activity.binder = binder;
-                    activity.mBound = true;
-                    this.binder = service as GoogleLocationServiceBinder;
-                }
-            }
+        public void OnConnectionFailed(ConnectionResult result)
+        {
+            throw new NotImplementedException();
+        }
 
-            public void OnServiceDisconnected(ComponentName name)
-            {
-                activity.mBound = false;
-            }
+        public void OnLocationChanged(Location location)
+        {
+            currentLocation = location;
         }
     }
 }
