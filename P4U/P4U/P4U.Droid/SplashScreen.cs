@@ -13,7 +13,7 @@ using System.Threading;
 
 namespace P4U.Droid
 {
-    [Activity(Theme = "@style/Theme.Splash" ,Label = "P4U", MainLauncher =true,NoHistory =true)]
+    [Activity(Theme = "@style/Theme.Splash" ,Label = "P4U",NoHistory =true)]
     public class SplashScreen : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

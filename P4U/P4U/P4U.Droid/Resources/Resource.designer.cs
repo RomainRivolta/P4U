@@ -2156,6 +2156,9 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f0a003a
 			public const int textSpacerNoButtons = 2131361850;
 			
+			// aapt resource value: 0x7f0a005c
+			public const int textViewAddrResult = 2131361884;
+			
 			// aapt resource value: 0x7f0a0063
 			public const int textViewDetailsAddress = 2131361891;
 			
@@ -2171,17 +2174,14 @@ namespace P4U.Droid
 			// aapt resource value: 0x7f0a005a
 			public const int textViewDistance = 2131361882;
 			
+			// aapt resource value: 0x7f0a005d
+			public const int textViewLocationResult = 2131361885;
+			
 			// aapt resource value: 0x7f0a0058
 			public const int textViewMoreData = 2131361880;
 			
 			// aapt resource value: 0x7f0a005b
 			public const int textViewNameResult = 2131361883;
-			
-			// aapt resource value: 0x7f0a005d
-			public const int textViewPaysEtVilleEtCPResult = 2131361885;
-			
-			// aapt resource value: 0x7f0a005c
-			public const int textViewRueResult = 2131361884;
 			
 			// aapt resource value: 0x7f0a006c
 			public const int time = 2131361900;

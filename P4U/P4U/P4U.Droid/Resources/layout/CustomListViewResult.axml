@@ -37,13 +37,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:id="@+id/textViewRueResult" />
+            android:id="@+id/textViewAddrResult" />
         <TextView
             android:text="Text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
-            android:id="@+id/textViewPaysEtVilleEtCPResult" />
+            android:id="@+id/textViewLocationResult" />
     </LinearLayout>
     <TextView
         android:text="Text"
