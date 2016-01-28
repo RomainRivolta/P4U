@@ -14,8 +14,8 @@
             <DataTemplate>
                 <StackPanel Orientation="Horizontal">
                     <ListView x:ConnectionId='1' HorizontalAlignment="Center" IsItemClickEnabled="True"                           Tag="{Binding Name}">
-                        <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" Tag="{Binding Name}"/>
-                        <Image Source="{Binding ImageType}" Height="140" Width="140" HorizontalAlignment="Center" Tag="{Binding Name}"/>
+                        <Image Source="{Binding ImageType}" Height="130" Width="130" HorizontalAlignment="Center" Tag="{Binding Name}"/>
+                        <TextBlock Text="{Binding Name}" Width="130" TextAlignment="Center" Tag="{Binding Name}"/>
                     </ListView>
                 </StackPanel>
             </DataTemplate>
