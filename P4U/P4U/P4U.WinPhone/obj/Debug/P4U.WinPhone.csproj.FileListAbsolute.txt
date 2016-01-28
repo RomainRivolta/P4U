@@ -19,11 +19,11 @@ C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\PageTypePlaces.g.cs
 C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\PagePlaces.g.i.cs
 C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\PagePlaces.g.cs
 C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\XamlTypeInfo.g.cs
-C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\XamlSaveStateFile.xml
 C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\App.xaml
+C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\App.xbf
+C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\XamlSaveStateFile.xml
 C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\PageTypePlaces.xaml
 C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\PagePlaces.xaml
-C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\App.xbf
 C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\PageTypePlaces.xbf
 C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\PagePlaces.xbf
 C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\P4U.WinPhone.exe
@@ -41,3 +41,12 @@ C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\qualifiers.txt
 C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\qualifiers.txt.intermediate
 C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\ProjectArchitectures.txt
+C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\PagePlaceDetails.g.i.cs
+C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\PagePlaceDetails.g.cs
+C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\PagePlaceDetails.xaml
+C:\Git\P4U\P4U\P4U.WinPhone\obj\Debug\PagePlaceDetails.xbf
+C:\Git\P4U\P4U\P4U.WinPhone\bin\Debug\PagePlaceDetails.xbf
+C:\Git\P4U\P4U\P4U.WinPhone\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Git\P4U\P4U\P4U.WinPhone\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
+C:\Git\P4U\P4U\P4U.WinPhone\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Git\P4U\P4U\P4U.WinPhone\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml

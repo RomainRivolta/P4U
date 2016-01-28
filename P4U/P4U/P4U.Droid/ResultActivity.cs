@@ -80,9 +80,9 @@ namespace P4U.Droid
             else
             {
                 SELECT_TYPE = Intent.GetStringExtra("SelectType");
-                QUERY = SELECT_TYPE;
+                //QUERY = SELECT_TYPE;
                 SupportActionBar.Title = Intent.GetStringExtra("SelectName");
-                query = core.TextSearchRequestsByLocation(settingsPerimeter, QUERY, SELECT_TYPE);
+                query = core.NearBySearchRequestsByLocation(RADIUS, SELECT_TYPE);
             }
 
             
@@ -104,7 +104,7 @@ namespace P4U.Droid
             }
             else
             {
-                string query = core.TextSearchRequestsByLocation(RADIUS, QUERY, SELECT_TYPE, pagetoken: RESULT_PLACE_SEARCH.FirstOrDefault().PageToken);
+                string query = core.NearBySearchRequestsByLocation(RADIUS, SELECT_TYPE, pagetoken: RESULT_PLACE_SEARCH.FirstOrDefault().PageToken);
                 RESULT_PLACE_SEARCH = core.GetPlaceSearch(query, MAX_WIDTH, MAX_HEIGHT,settingsTransport,"200x200").Result;
                 RefreshListView(RESULT_PLACE_SEARCH);
             }

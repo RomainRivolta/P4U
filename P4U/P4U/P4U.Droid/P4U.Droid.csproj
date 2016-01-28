@@ -38,6 +38,8 @@
     <Debugger>Xamarin</Debugger>
     <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
     <DevInstrumentationEnabled>True</DevInstrumentationEnabled>
+    <FileAlignment>512</FileAlignment>
+    <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -113,6 +115,8 @@
     <Compile Include="DetailActivity.cs" />
     <Compile Include="GridViewHome.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="MyService\GoogleLocationService.cs" />
+    <Compile Include="MyService\GoogleLocationServiceBinder.cs" />
     <Compile Include="NumberPickerPreference.cs" />
     <Compile Include="PrefsFragment.cs" />
     <Compile Include="Resources\Resource.designer.cs" />

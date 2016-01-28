@@ -1,3 +1,13 @@
+Assets\ic_launcher150.scale-100.png
+Assets\ic_launcher150.scale-140.png
+Assets\ic_launcher150.scale-240.png
+Assets\ic_launcher170.png
+Assets\ic_launcher210.png
+Assets\ic_launcher360.png
+Assets\ic_launcher71.scale-100.png
+Assets\ic_launcher71.scale-140.png
+Assets\ic_launcher71.scale-240.png
+Assets\ic_launcher99.png
 Assets\Logo.scale-240.png
 Assets\SmallLogo.scale-240.png
 Assets\SplashScreen.scale-240.png
@@ -6,6 +16,7 @@ Assets\StoreLogo.scale-240.png
 Assets\WideLogo.scale-240.png
 App.xbf
 P4U.WinPhone.xr.xml
+PagePlaceDetails.xbf
 PagePlaces.xbf
 PageTypePlaces.xbf
 Images\ic_bar.png

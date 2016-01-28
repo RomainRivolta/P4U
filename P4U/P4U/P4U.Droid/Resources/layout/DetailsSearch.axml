@@ -35,6 +35,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textViewDetailsAddress" />
+    <TextView
+        android:text="Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewDetailsOpen" />
+    <TextView
+        android:text="Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewDetailsWeekDay" />
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

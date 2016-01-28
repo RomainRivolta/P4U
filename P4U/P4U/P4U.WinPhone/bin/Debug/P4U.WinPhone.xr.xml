@@ -3,6 +3,7 @@
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="ImageType" />
+    <RootPropertyPathName Name="PlaceId" />
     <RootPropertyPathName Name="Address" />
     <RootPropertyPathName Name="Picture" />
   </Roots.PropertyPathNames>
@@ -13,6 +14,8 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Grid" />
+    <RootType FullName="P4U.WinPhone.PagePlaceDetails" />
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
@@ -28,6 +31,8 @@
       <RootProperty Name="Orientation" />
       <RootProperty Name="Children" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Tag" />
+      <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="HorizontalAlignment" />
@@ -41,15 +46,16 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Tag" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Tag" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="Text" />
       <RootProperty Name="Width" />
+      <RootProperty Name="Foreground" />
       <RootProperty Name="TextAlignment" />
-      <RootProperty Name="Tag" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Tag" />
     </RootType>
     <RootType FullName="P4U.WinPhone.PageTypePlaces" />
     <RootType FullName="Windows.UI.Xaml.Controls.ListBox">

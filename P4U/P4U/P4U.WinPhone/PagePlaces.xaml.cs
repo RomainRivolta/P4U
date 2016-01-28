@@ -52,8 +52,6 @@ namespace P4U.WinPhone
             this.GetLocation();
         }
 
-
-
         private async void GetLocation()
         {
             Geolocator geolocator = new Geolocator();
@@ -72,7 +70,7 @@ namespace P4U.WinPhone
                 Core myCore = new Core();
                 myCore.latitude = LATITUDE;
                 myCore.longitude = LONGITUDE;
-                string query = myCore.TextSearchRequestsByLocation(RADIUS, SELECT_TYPE, "drive", "");
+                string query = myCore.NearBySearchRequestsByLocation(RADIUS, SELECT_TYPE, "");
                 RESULT_PLACE_SEARCH = await myCore.GetPlaceSearch(query, MAX_WIDTH, MAX_HEIGHT,"drive", "200x200");
 
                 if (RESULT_PLACE_SEARCH != null)
@@ -86,6 +84,11 @@ namespace P4U.WinPhone
             {
                 //exception
             }
+        }
+
+        private void StackPanel_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            //Frame.Navigate(typeof(PagePlaceDetails), e.OriginalSource);
         }
     }
 }

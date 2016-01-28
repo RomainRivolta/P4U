@@ -37,14 +37,16 @@ namespace P4U.Droid.Base_Adapter
         {
             get
             {
-                if(!string.IsNullOrEmpty(items.FirstOrDefault().PageToken))
-                {
+                var pageToken = items.First().PageToken;
+                
+                //if (!string.IsNullOrWhiteSpace(pageToken))
+                //{
                     return items.Count + 1;
-                }
-                else
-                {
-                    return items.Count;
-                }
+               // }
+                //else
+                //{
+                  //  return items.Count;
+                //}
             }
         }
 
@@ -56,20 +58,23 @@ namespace P4U.Droid.Base_Adapter
                     view = context.LayoutInflater.Inflate(Resource.Layout.CustomListViewResult, null);
 
             TextView textViewNameResult = view.FindViewById<TextView>(Resource.Id.textViewNameResult);
-            TextView textViewRueResult = view.FindViewById<TextView>(Resource.Id.textViewRueResult);
-            TextView textViewPaysEtVilleEtCPResult = view.FindViewById<TextView>(Resource.Id.textViewPaysEtVilleEtCPResult);
+            TextView textViewAddrResult = view.FindViewById<TextView>(Resource.Id.textViewAddrResult);
+            TextView textViewLocationResult = view.FindViewById<TextView>(Resource.Id.textViewLocationResult);
+            //TextView textViewPaysEtVilleEtCPResult = view.FindViewById<TextView>(Resource.Id.textViewPaysEtVilleEtCPResult);
             TextView textViewMoreData = view.FindViewById<TextView>(Resource.Id.textViewMoreData);
             TextView textViewDistance = view.FindViewById<TextView>(Resource.Id.textViewDistance);
             ImageView imageViewPictureResult = view.FindViewById<ImageView>(Resource.Id.imageViewPictureResult);
 
+            
             if (position != Count - 1)
             {
                 var item = items[position];
+
                 string[] splitAddress = item.Address.Split(',');
-                string rue = splitAddress[0].Trim();
+                string location = splitAddress.Last();
                 string addr = string.Empty;
 
-                for (int i = 1; i < splitAddress.Length; i++)
+                for (int i = 0; i < splitAddress.Length-1; i++)
                 {
                     addr += splitAddress[i].Trim();
                 }
@@ -77,11 +82,14 @@ namespace P4U.Droid.Base_Adapter
                 textViewNameResult.Text = item.Name;
                 textViewNameResult.Visibility = ViewStates.Visible;
 
-                textViewRueResult.Text = rue;
-                textViewRueResult.Visibility = ViewStates.Visible;
+                textViewLocationResult.Text = location;
+                textViewLocationResult.Visibility = ViewStates.Visible;
 
-                textViewPaysEtVilleEtCPResult.Text = addr;
-                textViewPaysEtVilleEtCPResult.Visibility = ViewStates.Visible;
+                //textViewPaysEtVilleEtCPResult.Text = addr;
+                //textViewPaysEtVilleEtCPResult.Visibility = ViewStates.Visible;
+
+                textViewAddrResult.Text = addr;
+                textViewAddrResult.Visibility = ViewStates.Visible;
 
                 textViewDistance.Text = item.Distance;
                 textViewDistance.Visibility = ViewStates.Visible;
@@ -97,8 +105,10 @@ namespace P4U.Droid.Base_Adapter
                 textViewMoreData.Visibility = ViewStates.Visible;
 
                 textViewNameResult.Visibility = ViewStates.Gone;
-                textViewPaysEtVilleEtCPResult.Visibility = ViewStates.Gone;
-                textViewRueResult.Visibility = ViewStates.Gone;
+                //textViewPaysEtVilleEtCPResult.Visibility = ViewStates.Gone;
+                //textViewRueResult.Visibility = ViewStates.Gone;
+                textViewAddrResult.Visibility = ViewStates.Gone;
+                textViewLocationResult.Visibility = ViewStates.Gone;
                 imageViewPictureResult.Visibility = ViewStates.Gone;
                 textViewDistance.Visibility = ViewStates.Gone;
 

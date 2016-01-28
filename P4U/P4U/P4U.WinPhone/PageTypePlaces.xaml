@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="White">
 
     <GridView x:Name="GridViewPlaces" Margin="25"
    Width="auto" Height="auto" ItemsSource="{Binding}" >
@@ -14,8 +14,8 @@
             <DataTemplate>
                 <StackPanel Orientation="Horizontal">
                     <ListView HorizontalAlignment="Center" IsItemClickEnabled="True" ItemClick="TypeItemClick" Tag="{Binding Name}">
-                        <Image Source="{Binding ImageType}" Height="130" Width="130" HorizontalAlignment="Center" Tag="{Binding Name}"/>
-                        <TextBlock Text="{Binding Name}" Width="130" TextAlignment="Center" Tag="{Binding Name}"/>
+                        <Image Source="{Binding ImageType}" Height="130" Width="130" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding Name}" Width="130" Foreground="Black" TextAlignment="Center"/>
                     </ListView>
                 </StackPanel>
             </DataTemplate>

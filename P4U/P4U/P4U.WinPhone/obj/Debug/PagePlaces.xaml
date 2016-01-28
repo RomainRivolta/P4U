@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="White">
 
 
 
@@ -15,11 +15,11 @@
    ItemsSource="{Binding}" >
         <ListBox.ItemTemplate>
             <DataTemplate>
-                <StackPanel Orientation="Horizontal" Margin="2">
-                    <Image Source="{Binding Picture}" Height="80" Width="80" Margin="2" HorizontalAlignment="Left"/>
+                <StackPanel x:ConnectionId='1' Orientation="Horizontal" Margin="2"                            Tag="{Binding PlaceId}">
+                    <Image Source="{Binding Picture}" Height="80" Width="80" Margin="2" HorizontalAlignment="Left" Tag="{Binding PlaceId}"/>
                     <ListBox>
-                        <TextBlock Text="{Binding Address}" Margin="2" />
-                        <TextBlock Text="{Binding Name}" Margin="2" />
+                        <TextBlock Text="{Binding Address}" Margin="2" Tag="{Binding PlaceId}"/>
+                        <TextBlock Text="{Binding Name}" Margin="2" Tag="{Binding PlaceId}"/>
                     </ListBox>
                 </StackPanel>
             </DataTemplate>

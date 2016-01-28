@@ -13,9 +13,14 @@ namespace P4U
         public string longitude { get; set; }
 
 
-        public string TextSearchRequestsByLocation(int radius,string query,string types="",string pagetoken = "")
+        //public string TextSearchRequestsByLocation(int radius,string query,string types="",string pagetoken = "")
+        //{
+        //    return "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + query + "&pagetoken=" + pagetoken + "&location="+latitude+","+longitude+"&radius="+radius +"&types=" + types + "&key=" + key;
+        //}
+
+        public string NearBySearchRequestsByLocation(int radius, string types = "", string pagetoken = "")
         {
-            return "https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + query + "&pagetoken=" + pagetoken + "&location="+latitude+","+longitude+"&radius="+radius +"&types=" + types + "&key=" + key;
+            return "https://maps.googleapis.com/maps/api/place/nearbysearch/json?pagetoken=" + pagetoken + "&location=" + latitude + "," + longitude + "&radius=" + radius + "&types=" + types + "&key=" + key;
         }
 
         public string TextSearchRequestsBySearch(string search)
@@ -57,8 +62,8 @@ namespace P4U
                     string str_latitudeDestinations = Convert.ToString(latitudeDestinations);
                     string str_longitudeDestinations =  Convert.ToString(longitudeDestinations);
 
-                    string queryMatrix = DistanceMatrixRequests(str_latitudeDestinations, str_longitudeDestinations, mode);
-                    string streetViewQuery = StreetView(str_latitudeDestinations, str_longitudeDestinations,size);
+                    string queryMatrix = DistanceMatrixRequests(str_latitudeDestinations.Replace(",","."), str_longitudeDestinations.Replace(",", "."), mode);
+                    string streetViewQuery = StreetView(str_latitudeDestinations.Replace(",", "."), str_longitudeDestinations.Replace(",", "."), size);
                     string km = GetMatrix(queryMatrix);
 
                     lstPlaceSearch.Add(new PlaceSearch()
@@ -84,10 +89,10 @@ namespace P4U
 
             if (data_results["status"].Value == "OK")
             {
-                //dynamic openNow = placeOverview["opening_hours"] == null ? "" : placeOverview["opening_hours"]["open_now"].Value;
+                dynamic openNow = placeOverview["opening_hours"] == null ? "Inconnu" : placeOverview["opening_hours"]["open_now"].Value;
                 //dynamic rating = placeOverview["rating"].Value == null ? "" : placeOverview["rating"].Value;
-                //dynamic website = placeOverview["website"].Value == null ? "" : placeOverview["website"].Value;
-                //dynamic weekdayText = placeOverview["opening_hours"]["weekday_text"] == null ? "" : placeOverview["opening_hours"]["weekday_text"].Value; 
+                dynamic website = placeOverview["website"].Value == null ? "Inconnu" : placeOverview["website"].Value;
+                //dynamic weekdayText = placeOverview["opening_hours"]["weekday_text"] == null ? "Inconnu" : placeOverview["opening_hours"]["weekday_text"][0].Value;
 
                 string rating = Convert.ToString(placeOverview["rating"].Value);
 
@@ -97,10 +102,16 @@ namespace P4U
                     FormattedAddress = placeOverview["formatted_address"].Value,
                     InternationalPhoneNumber = placeOverview["international_phone_number"].Value,
                     Rating = rating,
-                    Website = placeOverview["website"].Value,
+                    Website = website,
+                    //WeekdayText = weekdayText,
+                    OpenNow =openNow
                 };
 
                 return placeDetails;
+            }
+            else if(data_results["status"].Value == "ZERO_RESULT")
+            {
+                return null;
             }
             else
                 return null;

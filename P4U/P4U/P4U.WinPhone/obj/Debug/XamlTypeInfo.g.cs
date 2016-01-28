@@ -124,27 +124,29 @@ namespace P4U.WinPhone.P4U_WinPhone_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[9];
-            _typeNameTable[0] = "P4U.WinPhone.PageTypePlaces";
+            _typeNameTable = new string[10];
+            _typeNameTable[0] = "P4U.WinPhone.PagePlaceDetails";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "P4U.WinPhone.Common.NavigationHelper";
-            _typeNameTable[4] = "Windows.UI.Xaml.DependencyObject";
-            _typeNameTable[5] = "P4U.WinPhone.Common.ObservableDictionary";
-            _typeNameTable[6] = "Object";
-            _typeNameTable[7] = "String";
-            _typeNameTable[8] = "P4U.WinPhone.PagePlaces";
+            _typeNameTable[3] = "P4U.WinPhone.PageTypePlaces";
+            _typeNameTable[4] = "P4U.WinPhone.Common.NavigationHelper";
+            _typeNameTable[5] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[6] = "P4U.WinPhone.Common.ObservableDictionary";
+            _typeNameTable[7] = "Object";
+            _typeNameTable[8] = "String";
+            _typeNameTable[9] = "P4U.WinPhone.PagePlaces";
 
-            _typeTable = new global::System.Type[9];
-            _typeTable[0] = typeof(global::P4U.WinPhone.PageTypePlaces);
+            _typeTable = new global::System.Type[10];
+            _typeTable[0] = typeof(global::P4U.WinPhone.PagePlaceDetails);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::P4U.WinPhone.Common.NavigationHelper);
-            _typeTable[4] = typeof(global::Windows.UI.Xaml.DependencyObject);
-            _typeTable[5] = typeof(global::P4U.WinPhone.Common.ObservableDictionary);
-            _typeTable[6] = typeof(global::System.Object);
-            _typeTable[7] = typeof(global::System.String);
-            _typeTable[8] = typeof(global::P4U.WinPhone.PagePlaces);
+            _typeTable[3] = typeof(global::P4U.WinPhone.PageTypePlaces);
+            _typeTable[4] = typeof(global::P4U.WinPhone.Common.NavigationHelper);
+            _typeTable[5] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[6] = typeof(global::P4U.WinPhone.Common.ObservableDictionary);
+            _typeTable[7] = typeof(global::System.Object);
+            _typeTable[8] = typeof(global::System.String);
+            _typeTable[9] = typeof(global::P4U.WinPhone.PagePlaces);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -179,10 +181,11 @@ namespace P4U.WinPhone.P4U_WinPhone_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_PageTypePlaces() { return new global::P4U.WinPhone.PageTypePlaces(); }
-        private object Activate_5_ObservableDictionary() { return new global::P4U.WinPhone.Common.ObservableDictionary(); }
-        private object Activate_8_PagePlaces() { return new global::P4U.WinPhone.PagePlaces(); }
-        private void MapAdd_5_ObservableDictionary(object instance, object key, object item)
+        private object Activate_0_PagePlaceDetails() { return new global::P4U.WinPhone.PagePlaceDetails(); }
+        private object Activate_3_PageTypePlaces() { return new global::P4U.WinPhone.PageTypePlaces(); }
+        private object Activate_6_ObservableDictionary() { return new global::P4U.WinPhone.Common.ObservableDictionary(); }
+        private object Activate_9_PagePlaces() { return new global::P4U.WinPhone.PagePlaces(); }
+        private void MapAdd_6_ObservableDictionary(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
             var newKey = (global::System.String)key;
@@ -200,11 +203,9 @@ namespace P4U.WinPhone.P4U_WinPhone_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  P4U.WinPhone.PageTypePlaces
+            case 0:   //  P4U.WinPhone.PagePlaceDetails
                 userType = new global::P4U.WinPhone.P4U_WinPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_PageTypePlaces;
-                userType.AddMemberName("NavigationHelper");
-                userType.AddMemberName("DefaultViewModel");
+                userType.Activator = Activate_0_PagePlaceDetails;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -217,36 +218,45 @@ namespace P4U.WinPhone.P4U_WinPhone_XamlTypeInfo
                 xamlType = new global::P4U.WinPhone.P4U_WinPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  P4U.WinPhone.Common.NavigationHelper
+            case 3:   //  P4U.WinPhone.PageTypePlaces
+                userType = new global::P4U.WinPhone.P4U_WinPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_3_PageTypePlaces;
+                userType.AddMemberName("NavigationHelper");
+                userType.AddMemberName("DefaultViewModel");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  P4U.WinPhone.Common.NavigationHelper
                 userType = new global::P4U.WinPhone.P4U_WinPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 4:   //  Windows.UI.Xaml.DependencyObject
+            case 5:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::P4U.WinPhone.P4U_WinPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  P4U.WinPhone.Common.ObservableDictionary
+            case 6:   //  P4U.WinPhone.Common.ObservableDictionary
                 userType = new global::P4U.WinPhone.P4U_WinPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.DictionaryAdd = MapAdd_5_ObservableDictionary;
+                userType.DictionaryAdd = MapAdd_6_ObservableDictionary;
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 6:   //  Object
+            case 7:   //  Object
                 xamlType = new global::P4U.WinPhone.P4U_WinPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 7:   //  String
+            case 8:   //  String
                 xamlType = new global::P4U.WinPhone.P4U_WinPhone_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 8:   //  P4U.WinPhone.PagePlaces
+            case 9:   //  P4U.WinPhone.PagePlaces
                 userType = new global::P4U.WinPhone.P4U_WinPhone_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_PagePlaces;
+                userType.Activator = Activate_9_PagePlaces;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
