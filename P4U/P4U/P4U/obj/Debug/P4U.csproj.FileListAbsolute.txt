@@ -22,14 +22,14 @@ D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U\obj\Debug\P4U.dll.mdb
 D:\Documents\Visual Studio 2015\Projects\P4U\P4U\P4U\P4U\bin\Debug\P4U.dll.mdb
 C:\Git\P4U\P4U\P4U\bin\Debug\P4U.dll
 C:\Git\P4U\P4U\P4U\bin\Debug\P4U.pdb
+C:\Git\P4U\P4U\P4U\bin\Debug\Microsoft.Threading.Tasks.dll
+C:\Git\P4U\P4U\P4U\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
 C:\Git\P4U\P4U\P4U\bin\Debug\Newtonsoft.Json.dll
+C:\Git\P4U\P4U\P4U\bin\Debug\Microsoft.Threading.Tasks.xml
+C:\Git\P4U\P4U\P4U\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
 C:\Git\P4U\P4U\P4U\bin\Debug\Newtonsoft.Json.xml
 C:\Git\P4U\P4U\P4U\obj\Debug\P4U.csprojResolveAssemblyReference.cache
 C:\Git\P4U\P4U\P4U\obj\Debug\P4U.Properties.Resources.resources
 C:\Git\P4U\P4U\P4U\obj\Debug\P4U.csproj.GenerateResource.Cache
 C:\Git\P4U\P4U\P4U\obj\Debug\P4U.dll
 C:\Git\P4U\P4U\P4U\obj\Debug\P4U.pdb
-C:\Git\P4U\P4U\P4U\bin\Debug\Microsoft.Threading.Tasks.dll
-C:\Git\P4U\P4U\P4U\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
-C:\Git\P4U\P4U\P4U\bin\Debug\Microsoft.Threading.Tasks.xml
-C:\Git\P4U\P4U\P4U\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
